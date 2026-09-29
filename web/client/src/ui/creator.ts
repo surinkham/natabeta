@@ -111,7 +111,14 @@ export function runCreator(serverUrl: string, offline = false): Promise<Creation
         slotsEl.querySelectorAll<HTMLElement>("[data-new]").forEach(b => b.addEventListener("click", () => showCreator(+b.dataset.new!)));
         slotsEl.querySelectorAll<HTMLElement>("[data-delete]").forEach(b => b.addEventListener("click", async () => { const slot = +b.dataset.delete!, s = slots[slot]!; if (await ask(`ลบ ${s.name} (Lv. ${s.level})?`, "ตัวละครจะถูกลบจริงหลัง 3 วัน — ระหว่างนี้เล่นไม่ได้ แต่กดยกเลิกลบได้ทุกเมื่อ", "ลบตัวละคร")) void showCharacters({ action: "delete", slot }); }));
         slotsEl.querySelectorAll<HTMLElement>("[data-undelete]").forEach(b => b.addEventListener("click", () => void showCharacters({ action: "undelete", slot: +b.dataset.undelete! })));
-      } catch (e: any) { status.textContent = String(e?.message ?? "โหลดตัวละครไม่สำเร็จ"); status.classList.add("pt-character-error"); slotsEl.innerHTML = `<button type="button" class="pt-character-slot empty" id="retry-characters"><span class="slot-avatar">↻</span><span class="slot-info"><b>ลองโหลดอีกครั้ง</b><small>ตรวจสอบการเชื่อมต่อ server</small></span></button>`; document.getElementById("retry-characters")!.addEventListener("click", () => void showCharacters()); }
+      } catch (e: any) {
+        console.warn("Unable to load character slots:", e);
+        status.textContent = "เชื่อมต่อเซิร์ฟเวอร์ไม่ได้ กรุณาลองใหม่อีกครั้ง";
+        status.classList.add("pt-character-error");
+        slotsEl.innerHTML = `<button type="button" class="pt-character-slot empty" id="retry-characters"><span class="slot-avatar">↻</span><span class="slot-info"><b>ลองเชื่อมต่ออีกครั้ง</b><small>ความคืบหน้าเดิมยังอยู่</small></span></button><button type="button" class="pt-character-slot empty" id="try-offline"><span class="slot-avatar">🐾</span><span class="slot-info"><b>ทดลองเล่นออฟไลน์</b><small>รอบนี้ไม่บันทึกความคืบหน้า</small></span></button>`;
+        document.getElementById("retry-characters")!.addEventListener("click", () => void showCharacters());
+        document.getElementById("try-offline")!.addEventListener("click", () => { const url = new URL(location.href); url.searchParams.set("offline", "1"); location.assign(url.href); });
+      }
     };
     const googleHost = document.getElementById("login-google")!;
     if (googleConfigured()) googleButton(googleHost, () => showCharacters(), { prompt: false }).catch(() => { googleHost.textContent = "เชื่อมต่อ Google ไม่สำเร็จ ลองโหลดหน้าอีกครั้ง"; });
