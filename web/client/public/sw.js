@@ -1,5 +1,5 @@
 // App-shell + assets cache. Bump CACHE when assets change (tools/export.py prints a reminder).
-const CACHE = "pawtale-v8-equipment-entrance";
+const CACHE = "pawtale-v9-landing-startup";
 self.addEventListener("install", e => { self.skipWaiting(); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k))))); self.clients.claim(); });
 self.addEventListener("fetch", e => {
