@@ -1,0 +1,10 @@
+{
+  "HP_Base": 100, "HP_PerVIT": 10, "HP_PerLevel": 5,
+  "ATK_PerSTR": 2, "ATK_PerDEX": 0.5, "MATK_PerINT": 2,
+  "DEF_PerVIT": 1, "MDEF_PerINT": 0.5,
+  "Crit_Base": 5, "Crit_PerLUK": 0.5, "Crit_Cap": 50, "Crit_Mult": 1.5,
+  "Dodge_PerAGI": 0.3, "Dodge_Cap": 30,
+  "Hit_Base": 90, "Hit_PerDEX": 0.2,
+  "AtkSpeed_PerAGI": 0.01, "MoveSpeed_Base": 4.2,
+  "Dmg_VarMin": 0.95, "Dmg_VarMax": 1.05
+}

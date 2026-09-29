@@ -1,0 +1,22 @@
+[
+ {
+  "id": "OBJ_ALLOCATE",
+  "text": "แจกแต้มสถานะก่อนออกล่า — เปิด Status แล้วกด +",
+  "done": "points0"
+ },
+ {
+  "id": "OBJ_HUNT",
+  "text": "ออกไปทางเหนือ ล่า Forest Wolf 5 ตัว",
+  "done": "kills5"
+ },
+ {
+  "id": "OBJ_CRAFT",
+  "text": "กลับเมือง หา Bram ช่างตีเหล็ก craft Wolf Fang Sword",
+  "done": "crafted"
+ },
+ {
+  "id": "OBJ_FREE",
+  "text": "ผจญภัยต่อตามใจ — ลอง Slash (K) กับ wolf หลายตัว",
+  "done": "never"
+ }
+]

@@ -1,0 +1,32 @@
+{
+  "name": "pawtale-kingdoms-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.config.ts",
+    "server": "tsx watch server/index.ts",
+    "build": "vite build --config vite.config.ts",
+    "preview": "vite preview --config vite.config.ts",
+    "build:single": "SINGLE=1 vite build --config vite.config.ts && python3 tools/embed.py",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "colyseus": "^0.15.57",
+    "colyseus.js": "^0.15.28",
+    "pg": "^8.23.0",
+    "three": "0.160.0"
+  },
+  "devDependencies": {
+    "@colyseus/testing": "^0.15.4",
+    "@types/node": "^20.19.43",
+    "@types/pg": "^8.23.1",
+    "@types/three": "0.160.0",
+    "tsx": "^4.23.15",
+    "typescript": "5.4.5",
+    "vite": "5.2.11",
+    "vite-plugin-singlefile": "^2.0.1",
+    "vitest": "1.6.0"
+  }
+}

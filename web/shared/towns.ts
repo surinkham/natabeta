@@ -1,0 +1,14 @@
+import type { Biome } from './regions';
+export interface TownBuilding { name:string; x:number; z:number; ry:number; s:number }
+export interface TownResident { role:'shop'|'craft'|'skillshop'|'stylist'|'talk'; name:string; x:number; z:number; species:'dog'|'cat'|'mouse'; yaw:number }
+export interface TownPlan { buildings:TownBuilding[]; residents:TownResident[]; paths:[number,number,number,number][] }
+const house=(x:number,z:number,ry=0,s=1,name='SM_House_Stone'):TownBuilding=>({name,x,z,ry,s});
+const npc=(role:TownResident['role'],name:string,x:number,z:number,species:TownResident['species'],yaw=0):TownResident=>({role,name,x,z,species,yaw});
+/** Local coordinates; city origins are applied identically by server and renderer. */
+export const TOWNS:Partial<Record<Biome,TownPlan>>={
+ forest:{buildings:[house(-7,-5,Math.PI/2,.85),house(7,4.8,-Math.PI/2),house(-7,4,Math.PI/2,.85),house(6,-6,Math.PI,.85,'SM_Stall')],residents:[npc('shop','Fern (แม่ค้าสมุนไพร)',3.5,-5,'mouse'),npc('craft','Oak (ช่างไม้)',-3.5,-4.5,'dog'),npc('skillshop','Liora (ผู้พิทักษ์ป่า)',-3.5,3.5,'cat'),npc('stylist','Ivy (ช่างแต่งขน)',3.5,2,'cat'),npc('talk','ผู้ดูแลพฤกษา',0,-7.8,'mouse')],paths:[[0,-7,0,6],[-3.5,-5,3.5,-5],[-3.5,3.5,3.5,3.5]]},
+ snow:{buildings:[house(-7,-5,Math.PI/2),house(7,-5,-Math.PI/2),house(-7,4,Math.PI/2,.85),house(7,4,-Math.PI/2,.85)],residents:[npc('shop','Niva (ร้านเสบียง)',-3.5,-5,'mouse'),npc('craft','Bjorn (ช่างน้ำแข็ง)',3.5,-5,'dog'),npc('skillshop','Skadi (ผู้ฝึกหิมะ)',3.5,4,'cat'),npc('stylist','Yuki (ช่างแต่งขน)',-3.5,4,'cat'),npc('talk','ยามหิมะ',1.5,-8,'dog')],paths:[[0,-9,0,6],[-4,-5,4,-5],[-4,4,4,4]]},
+ desert:{buildings:[house(-7,4.6,Math.PI/2),house(7,-4.6,-Math.PI/2),house(-6,-6,Math.PI/2,.8),house(6,6,-Math.PI/2,.8)],residents:[npc('shop','Zara (ตลาดโอเอซิส)',-3.5,2.4,'cat'),npc('craft','Rafi (ช่างทอง)',3.5,-2.4,'mouse'),npc('skillshop','Amir (ครูฝึกทราย)',-2.5,-6,'dog'),npc('stylist','Suri (ช่างผ้าคลุม)',3,5.5,'cat'),npc('talk','พ่อค้าเดินทาง',-2,5,'mouse')],paths:[[-4,0,4,0],[0,-9,0,6],[-3,-6,0,-6],[0,5.5,3,5.5]]},
+ volcanic:{buildings:[house(-7,-5,Math.PI/2,1),house(7,5,-Math.PI/2,1.05,'SM_Tavern'),house(-7,4,Math.PI/2,.8),house(6,-6,Math.PI,.85,'SM_Stall')],residents:[npc('shop','Cinder (เสบียงนักขุด)',3.5,-5.5,'mouse'),npc('craft','Vulcan (ช่างหลอม)',3.2,2.4,'dog'),npc('skillshop','Ash (อัศวินเพลิง)',-3.5,-5,'dog'),npc('stylist','Ember (ช่างแต่งขน)',-3.5,4,'cat'),npc('talk','ยามเตาหลอม',1.5,-8,'dog')],paths:[[0,-9,0,6],[0,2.4,3.5,2.4],[-4,-5,4,-5],[-3.5,4,0,4]]},
+ shadow:{buildings:[house(-7,-4,Math.PI/2,.85),house(7,-4,-Math.PI/2,.85),house(-6,5,Math.PI/2,.8),house(7,4,-Math.PI/2,.8)],residents:[npc('shop','Nyx (ร้านของลึกลับ)',3.5,4,'cat'),npc('craft','Morrow (ช่างอาคม)',-3.5,-4,'mouse'),npc('skillshop','Vesper (นักเวทเงา)',3.5,-4,'cat'),npc('stylist','Luna (ช่างแต่งขน)',-2.7,5,'mouse'),npc('talk','ผู้เฝ้ารอยแยก',-1.5,-8,'dog')],paths:[[0,-9,0,6],[-4,-4,4,-4],[-3,5,3.5,4]]},
+};

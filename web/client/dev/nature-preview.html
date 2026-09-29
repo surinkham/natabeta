@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nature preview — Pawtale Kingdoms</title>
+<style>body{margin:0;background:#d5e2d0;font-family:system-ui}canvas{display:block}aside{position:fixed;top:20px;left:20px;padding:14px 20px;border-radius:12px;background:#fff9ecdf;color:#304b37;pointer-events:none}b{font-size:20px}small{display:block;margin-top:5px}</style></head>
+<body><aside><b>ทุ่งหญ้าและต้นไม้ชุดใหม่</b><small>ลากเพื่อหมุน · เลื่อนเพื่อซูม</small></aside>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import {createLandscapeGround,createVegetationKit,createMeadow,updateLandscape} from '../src/world/landscape.ts';
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0xc9dbce);scene.fog=new THREE.Fog(0xc9dbce,23,45);
+scene.add(new THREE.HemisphereLight(0xe4efff,0x82916b,1.15));
+const sun=new THREE.DirectionalLight(0xfff1dc,2.1);sun.position.set(-5,12,-12);sun.target.position.set(0,0,-19);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-12;sun.shadow.camera.right=12;sun.shadow.camera.top=12;sun.shadow.camera.bottom=-12;sun.shadow.normalBias=0.035;scene.add(sun,sun.target);
+scene.add(createLandscapeGround(),createMeadow([]));
+const kit=createVegetationKit();
+for(const [name,x,z,s] of [['SM_Tree_Round',-3,-20,1],['SM_Tree_Pine',3,-21,1.05],['SM_Tree_Round',-5,-25,.85],['SM_Bush',-2.4,-17,.8]]){
+ const obj=kit[name].clone();obj.position.set(x,0,z);obj.scale.setScalar(s);scene.add(obj);
+}
+const camera=new THREE.PerspectiveCamera(40,innerWidth/innerHeight,.1,80);camera.position.set(7,7,-10);
+const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,1,-20);controls.maxPolarAngle=1.45;controls.minDistance=4;controls.maxDistance=24;controls.update();
+const clock=new THREE.Clock();renderer.setAnimationLoop(()=>{updateLandscape(Math.min(clock.getDelta(),.1));renderer.render(scene,camera)});
+addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix()});
+</script></body></html>

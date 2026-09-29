@@ -1,0 +1,99 @@
+{
+  "NPC_SMITH": {
+    "name": "Bram (ช่างตีเหล็ก)",
+    "kind": "craft",
+    "pos": [
+      5.2,
+      -4.2
+    ],
+    "lines": [
+      "เอาเขี้ยว wolf มาสิบอัน เหล็กห้าก้อน ข้าตีดาบให้ — ชุดเกราะอัศวินก็มีขาย",
+      "ล่าหมาป่า จิ้งจอก หมูป่า เอาหนังกับเขี้ยวมา เดี๋ยวตีเสื้อคลุมขนให้"
+    ],
+    "recipes": [
+      "RCP_WOLF_FANG_SWORD",
+      "RCP_FUR_CLOAK"
+    ],
+    "stock": [
+      "KNIGHT_HELMET",
+      "KNIGHT_CHEST",
+      "KNIGHT_GLOVES",
+      "KNIGHT_BOOTS",
+      "KNIGHT_CAPE",
+      "KITE_SHIELD"
+    ]
+  },
+  "NPC_TOOL": {
+    "name": "Mira (ร้านเครื่องมือ)",
+    "kind": "shop",
+    "pos": [
+      -4.6,
+      -2.4
+    ],
+    "lines": [
+      "ยาแดงขวดละ 20 Gold แร่เหล็ก 15 — ขายของให้ก็รับนะ",
+      "อยากแลกของกับผู้เล่นคนอื่น ต้องมี Merchant Seal 50 Gold — ซื้อครั้งเดียวใช้ได้ตลอด"
+    ],
+    "stock": [
+      "HP_POTION",
+      "IRON_ORE",
+      "MERCHANT_SEAL",
+      "MOUNT_HORSE"
+    ]
+  },
+  "NPC_STYLIST": {
+    "name": "Mei (ช่างแต่งขน)",
+    "kind": "stylist",
+    "pos": [
+      5.0,
+      4.4
+    ],
+    "lines": [
+      "อยากเปลี่ยนสีขนไหม? ครั้งละ 30 Gold"
+    ],
+    "price": 30
+  },
+  "NPC_VILLAGER1": {
+    "name": "ชาวเมือง",
+    "kind": "talk",
+    "pos": [
+      -2.2,
+      2.8
+    ],
+    "lines": [
+      "ระวัง wolf นอกรั้วทางเหนือ ตัวเล็กแต่กัดเจ็บ",
+      "ยืนพักในเมืองเลือดจะฟื้นเอง",
+      "ช่างตีเหล็กอยู่ทางตะวันออกของลาน"
+    ]
+  },
+  "NPC_VILLAGER2": {
+    "name": "แม่ค้าเร่",
+    "kind": "talk",
+    "pos": [
+      -1.4,
+      -5.6
+    ],
+    "lines": [
+      "เขี้ยว wolf ขายได้ราคาดี",
+      "ได้ยินว่ามีมังกรอยู่ไกลออกไปทางเหนือ… เรื่องเล่าน่ะ",
+      "อยากเปลี่ยนสีขนไปหา Mei"
+    ]
+  },
+  "NPC_SKILL": {
+    "name": "Rowan (ครูฝึก)",
+    "kind": "skillshop",
+    "pos": [
+      -4.4,
+      4.6
+    ],
+    "lines": [
+      "ท่าไม้ตายไม่ต้องเลือกสาย — มี Gold ก็เรียนได้ทุกท่า",
+      "Bash ทุบหนัก · Whirlwind ฟันรอบตัว · Mend ฟื้นเลือด"
+    ],
+    "skills": [
+      "SKILL_BASH",
+      "SKILL_WHIRL",
+      "SKILL_HEAL"
+    ]
+  }
+}

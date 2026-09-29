@@ -1,0 +1,8 @@
+// Mouse cursors over the world: the weapon in hand over a monster, a hand over a drop. Hotspot = the tip (top-left).
+const svg = (body: string) => `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round">${body}</svg>`)}") 2 2`;
+const SWORD = svg(`<path d="M3 3l17 17" stroke="#2a1a0c" stroke-width="6"/><path d="M3 3l17 17" stroke="#e8eef4" stroke-width="3"/><path d="M16 24l8-8" stroke="#2a1a0c" stroke-width="5"/><path d="M16 24l8-8" stroke="#d9a53a" stroke-width="2.5"/><path d="M22 22l6 6" stroke="#2a1a0c" stroke-width="5"/><path d="M22 22l6 6" stroke="#7a4a22" stroke-width="2.5"/>`);
+const BOW = svg(`<path d="M8 27C22 25 27 18 27 6" stroke="#2a1a0c" stroke-width="5"/><path d="M8 27C22 25 27 18 27 6" stroke="#a8692c" stroke-width="2.5"/><path d="M8 27L27 6" stroke="#f3ead9" stroke-width="1"/><path d="M3 3l18 18" stroke="#2a1a0c" stroke-width="4"/><path d="M3 3l18 18" stroke="#e8e0cc" stroke-width="1.8"/><path d="M3 3l6 1.5M3 3l1.5 6" stroke="#c9d3dc" stroke-width="2.2"/>`);
+const STAFF = svg(`<path d="M7 7l21 21" stroke="#2a1a0c" stroke-width="5.5"/><path d="M7 7l21 21" stroke="#8a5a2e" stroke-width="3"/><circle cx="6" cy="6" r="5" fill="#7ad0ff" stroke="#2a1a0c" stroke-width="2"/><circle cx="4.5" cy="4.5" r="1.5" fill="#fff" stroke="none"/>`);
+/** The attack cursor for a weapon kind (bare hands use the sword). */
+export const attackCursor = (weapon: string | undefined) => `${weapon === "bow" ? BOW : weapon === "staff" ? STAFF : SWORD}, crosshair`;
+export const PICK_CURSOR = "grab";

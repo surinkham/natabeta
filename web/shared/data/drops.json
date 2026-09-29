@@ -1,0 +1,1008 @@
+{
+  "DROP_WOLF": [
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "IRON_ORE",
+      "chance": 0.3,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 5,
+      "max": 15
+    }
+  ],
+  "DROP_ALPHA": [
+    {
+      "item": "ALPHA_FANG",
+      "chance": 1.0,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 1.0,
+      "min": 2,
+      "max": 4
+    },
+    {
+      "item": "KNIGHT_CAPE",
+      "chance": 0.25,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 120,
+      "max": 220
+    },
+    {
+      "item": "SCROLL_ALPHA_BLADE",
+      "chance": 0.05,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "SCROLL_MOONWARD",
+      "chance": 0.03,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "SKILLBOOK_FLAME_BLADE",
+      "chance": 0.03,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "SKILLBOOK_LIGHTNING",
+      "chance": 0.03,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_FOX": [
+    {
+      "item": "FOX_PELT",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.2,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 12,
+      "max": 26
+    }
+  ],
+  "DROP_BOAR": [
+    {
+      "item": "BOAR_TUSK",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 0.35,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "IRON_ORE",
+      "chance": 0.4,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 25,
+      "max": 45
+    }
+  ],
+  "DROP_DIRE": [
+    {
+      "item": "SHADOW_FUR",
+      "chance": 0.5,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.6,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "ALPHA_FANG",
+      "chance": 0.08,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 40,
+      "max": 70
+    }
+  ],
+  "DROP_SHROOM": [
+    {
+      "item": "SHROOM_CAP",
+      "chance": 0.8,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 6,
+      "max": 14
+    }
+  ],
+  "DROP_BEAR": [
+    {
+      "item": "BEAR_CLAW",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 0.5,
+      "min": 2,
+      "max": 3
+    },
+    {
+      "item": "IRON_ORE",
+      "chance": 0.45,
+      "min": 2,
+      "max": 4
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 70,
+      "max": 120
+    }
+  ],
+  "DROP_SLIME": [
+    {
+      "item": "SLIME_JELLY",
+      "chance": 0.85,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 3,
+      "max": 9
+    }
+  ],
+  "DROP_STUMP": [
+    {
+      "item": "HEART_WOOD",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "SHROOM_CAP",
+      "chance": 0.5,
+      "min": 2,
+      "max": 4
+    },
+    {
+      "item": "IRON_ORE",
+      "chance": 0.3,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 90,
+      "max": 150
+    }
+  ],
+  "DROP_MOSS": [
+    {
+      "item": "SLIME_JELLY",
+      "chance": 0.85,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "MOSS_HEART",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    }
+  ],
+  "DROP_FROST": [
+    {
+      "item": "SHADOW_FUR",
+      "chance": 0.5,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.6,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "FROST_CRYSTAL",
+      "chance": 0.45,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    }
+  ],
+  "DROP_DUNE": [
+    {
+      "item": "BOAR_TUSK",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 0.35,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "DUNE_SHELL",
+      "chance": 0.45,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    }
+  ],
+  "DROP_EMBER": [
+    {
+      "item": "HEART_WOOD",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "SHROOM_CAP",
+      "chance": 0.5,
+      "min": 2,
+      "max": 4
+    },
+    {
+      "item": "MAGMA_CORE",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    }
+  ],
+  "DROP_VOID": [
+    {
+      "item": "FOX_PELT",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.2,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "VOID_SHARD",
+      "chance": 0.35,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    }
+  ],
+  "DROP_BAT": [
+    {
+      "item": "BAT_WING",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "SHROOM_CAP",
+      "chance": 0.2,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 12,
+      "max": 26
+    }
+  ],
+  "DROP_VAMPIRE": [
+    {
+      "item": "MOON_FANG",
+      "chance": 0.5,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "BAT_WING",
+      "chance": 0.7,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "VOID_SHARD",
+      "chance": 0.08,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 36,
+      "max": 78
+    }
+  ],
+  "DROP_GOLEM": [
+    {
+      "item": "HEART_WOOD",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "SHROOM_CAP",
+      "chance": 0.5,
+      "min": 2,
+      "max": 4
+    },
+    {
+      "item": "MAGMA_CORE",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "SCROLL_INFERNO",
+      "chance": 0.02,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "SKILLBOOK_FLAME_BLADE",
+      "chance": 0.01,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_REAPER": [
+    {
+      "item": "FOX_PELT",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.2,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "VOID_SHARD",
+      "chance": 0.35,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "SCROLL_STORM_BOW",
+      "chance": 0.02,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "SKILLBOOK_LIGHTNING",
+      "chance": 0.01,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_FROST_BEAR": [
+    {
+      "item": "SHADOW_FUR",
+      "chance": 0.5,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.6,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "FROST_CRYSTAL",
+      "chance": 0.45,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "SCROLL_MOONWARD",
+      "chance": 0.015,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_GUARDIAN": [
+    {
+      "item": "SLIME_JELLY",
+      "chance": 0.85,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "MOSS_HEART",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "SKILLBOOK_LIGHTNING",
+      "chance": 0.01,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_MEADOW_1": [
+    {
+      "item": "FOX_PELT",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.2,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 12,
+      "max": 26
+    },
+    {
+      "item": "MAT_MEADOW",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_MEADOW",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_MEADOW_2": [
+    {
+      "item": "BOAR_TUSK",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 0.35,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "IRON_ORE",
+      "chance": 0.4,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 25,
+      "max": 45
+    },
+    {
+      "item": "MAT_MEADOW",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_MEADOW",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_GROVE_1": [
+    {
+      "item": "SLIME_JELLY",
+      "chance": 0.85,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "MOSS_HEART",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "MAT_GROVE",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_GROVE",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_GROVE_2": [
+    {
+      "item": "SLIME_JELLY",
+      "chance": 0.85,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "MOSS_HEART",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "SKILLBOOK_LIGHTNING",
+      "chance": 0.01,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "MAT_GROVE",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_GROVE",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_GLACIER_1": [
+    {
+      "item": "SHADOW_FUR",
+      "chance": 0.5,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.6,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "FROST_CRYSTAL",
+      "chance": 0.45,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "MAT_GLACIER",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_GLACIER",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_GLACIER_2": [
+    {
+      "item": "SHADOW_FUR",
+      "chance": 0.5,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.6,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "FROST_CRYSTAL",
+      "chance": 0.45,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "SCROLL_MOONWARD",
+      "chance": 0.015,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "MAT_GLACIER",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_GLACIER",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_DUNE_1": [
+    {
+      "item": "BOAR_TUSK",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 0.35,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "DUNE_SHELL",
+      "chance": 0.45,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "MAT_DUNE",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_DUNE",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_DUNE_2": [
+    {
+      "item": "BOAR_TUSK",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 0.35,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "DUNE_SHELL",
+      "chance": 0.45,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "MAT_DUNE",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_DUNE",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_CINDER_1": [
+    {
+      "item": "HEART_WOOD",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "SHROOM_CAP",
+      "chance": 0.5,
+      "min": 2,
+      "max": 4
+    },
+    {
+      "item": "MAGMA_CORE",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "MAT_CINDER",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_CINDER",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_CINDER_2": [
+    {
+      "item": "HEART_WOOD",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "SHROOM_CAP",
+      "chance": 0.5,
+      "min": 2,
+      "max": 4
+    },
+    {
+      "item": "MAGMA_CORE",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "SCROLL_INFERNO",
+      "chance": 0.02,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "SKILLBOOK_FLAME_BLADE",
+      "chance": 0.01,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "MAT_CINDER",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_CINDER",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_ECLIPSE_1": [
+    {
+      "item": "FOX_PELT",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.2,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "VOID_SHARD",
+      "chance": 0.35,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "MAT_ECLIPSE",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_ECLIPSE",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "DROP_MON_Z_ECLIPSE_2": [
+    {
+      "item": "FOX_PELT",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.2,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "VOID_SHARD",
+      "chance": 0.35,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 105,
+      "max": 216
+    },
+    {
+      "item": "SCROLL_STORM_BOW",
+      "chance": 0.02,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "SKILLBOOK_LIGHTNING",
+      "chance": 0.01,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "MAT_ECLIPSE",
+      "chance": 0.65,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "BOOK_ECLIPSE",
+      "chance": 0.025,
+      "min": 1,
+      "max": 1
+    }
+  ]
+}

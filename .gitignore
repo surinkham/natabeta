@@ -1,0 +1,25 @@
+# dependencies and builds
+node_modules/
+web/dist/
+work/game/dist/
+.vite/
+work/blender/.venv/
+__pycache__/
+*.pyc
+*.blend1
+*.fbm/
+# secrets and live data (never in git)
+.env
+.env.*
+!.env.example
+client_secret*.json
+web/server/data/
+# local tool state
+.claude/
+.codex/
+.agents/
+# large downloaded binary (fetched by tools/tunnel scripts)
+web/tools/bin/cloudflared
+# build artifacts (rebuilt by tools/deploy.sh / the single-file build)
+web/deploy/*.zip
+work/game/single.html

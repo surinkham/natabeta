@@ -1,0 +1,126 @@
+{
+  "DROP_WOLF": [
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 0.4,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "IRON_ORE",
+      "chance": 0.3,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 5,
+      "max": 15
+    }
+  ],
+  "DROP_ALPHA": [
+    {
+      "item": "ALPHA_FANG",
+      "chance": 1.0,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 1.0,
+      "min": 2,
+      "max": 4
+    },
+    {
+      "item": "KNIGHT_CAPE",
+      "chance": 0.25,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 120,
+      "max": 220
+    }
+  ],
+  "DROP_FOX": [
+    {
+      "item": "FOX_PELT",
+      "chance": 0.55,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.2,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 12,
+      "max": 26
+    }
+  ],
+  "DROP_BOAR": [
+    {
+      "item": "BOAR_TUSK",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_HIDE",
+      "chance": 0.35,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "IRON_ORE",
+      "chance": 0.4,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 25,
+      "max": 45
+    }
+  ],
+  "DROP_DIRE": [
+    {
+      "item": "SHADOW_FUR",
+      "chance": 0.5,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "WOLF_FANG",
+      "chance": 0.6,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "ALPHA_FANG",
+      "chance": 0.08,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "GOLD",
+      "chance": 1.0,
+      "min": 40,
+      "max": 70
+    }
+  ]
+}

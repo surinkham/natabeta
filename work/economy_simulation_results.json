@@ -1,0 +1,35 @@
+{
+  "iterations": 200000,
+  "seed": 21092026,
+  "recipe": {
+    "WOLF_FANG": 10,
+    "IRON_ORE": 5,
+    "GOLD": 50
+  },
+  "mean_kills": 14.1867,
+  "median_kills": 13.0,
+  "percentiles_kills": {
+    "10": 9,
+    "50": 13,
+    "75": 16,
+    "90": 20,
+    "95": 23,
+    "99": 29
+  },
+  "probability_ready_by_kill": {
+    "5": 0.000135,
+    "10": 0.197405,
+    "12": 0.408875,
+    "15": 0.691035,
+    "18": 0.85384,
+    "20": 0.91196,
+    "25": 0.97419,
+    "30": 0.99261
+  },
+  "assumptions": [
+    "Independent fang/ore rolls; quantities are uniform integers.",
+    "Every kill grants gold; hide roll omitted because it is independent and not a recipe ingredient.",
+    "All drops retained; no overflow, spending, sharing, disconnect or failures.",
+    "Kill counts only; combat timing and spawner contention are not modeled."
+  ]
+}

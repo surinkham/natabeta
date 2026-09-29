@@ -1,0 +1,393 @@
+<title>Beast Kingdom Prototype</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700&display=swap">
+<style>
+  :root {
+    --ground: #274a33; --panel: #2b2016; --panel-2: #3a2c1e; --line: #5a4530;
+    --ink: #f3ead9; --ink-dim: #c9b89c; --accent: #e8963a; --hp: #d9534f; --exp: #6fb1e0; --good: #7cc47a;
+    --display: "Fredoka", "Nunito", system-ui, sans-serif; --body: "Nunito", system-ui, sans-serif;
+  }
+  html, body { height: 100%; }
+  [hidden] { display: none !important; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--body); overflow: hidden; }
+  #game { position: fixed; inset: 0; }
+  canvas { display: block; touch-action: none; }
+  .hud { position: fixed; z-index: 2; font-size: 13px; }
+  .panel { background: color-mix(in srgb, var(--panel) 88%, transparent); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; box-shadow: 0 4px 16px rgba(0,0,0,.35); }
+  #stats { top: calc(env(safe-area-inset-top, 0px) + 12px); left: 16px; width: 200px; }
+  #bag { top: calc(env(safe-area-inset-top, 0px) + 12px); right: 16px; min-width: 128px; }
+  .name { font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: .01em; display: flex; justify-content: space-between; }
+  .bar { height: 10px; border-radius: 5px; background: #1a130c; overflow: hidden; margin: 5px 0 2px; }
+  .bar > i { display: block; height: 100%; width: 0%; background: var(--hp); transition: width .15s; }
+  .bar.exp > i { background: var(--exp); }
+  .row { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; color: var(--ink-dim); }
+  .row b { color: var(--ink); font-weight: 700; }
+  #bag .row { gap: 14px; }
+  #hint { bottom: calc(env(safe-area-inset-bottom, 0px) + 12px); left: 50%; transform: translateX(-50%); color: var(--ink-dim); text-align: center; font-size: 12px; white-space: nowrap; }
+  #craft { left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(320px, calc(100vw - 32px)); }
+  #craft h2 { font-family: var(--display); font-size: 20px; margin: 0 0 6px; font-weight: 600; }
+  #craft p { margin: 0 0 8px; color: var(--ink-dim); font-size: 13px; }
+  .need { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-variant-numeric: tabular-nums; margin-bottom: 10px; }
+  .need .ok { color: var(--good); } .need .no { color: var(--hp); }
+  button { font-family: var(--display); font-weight: 600; font-size: 15px; color: #1a130c; background: var(--accent); border: 0; border-radius: 8px; padding: 9px 14px; cursor: pointer; }
+  button:disabled { background: var(--line); color: var(--ink-dim); cursor: default; }
+  button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  #toast { top: calc(env(safe-area-inset-top, 0px) + 88px); left: 50%; transform: translateX(-50%); font-family: var(--display); font-size: 17px; color: var(--accent); text-shadow: 0 2px 6px rgba(0,0,0,.6); pointer-events: none; opacity: 0; transition: opacity .3s; }
+  #toast.on { opacity: 1; }
+  #dead { inset: 0; display: grid; place-items: center; background: rgba(20,10,5,.55); font-family: var(--display); font-size: 28px; }
+  .float { position: fixed; z-index: 2; pointer-events: none; font-family: var(--display); font-weight: 600; font-size: 18px; text-shadow: 0 2px 4px rgba(0,0,0,.7); transform: translate(-50%, -100%); }
+  .float.crit { color: var(--accent); font-size: 24px; } .float.hit { color: #fff; } .float.taken { color: var(--hp); } .float.miss { color: var(--ink-dim); font-size: 14px; }
+  .wbar { position: fixed; z-index: 1; width: 44px; height: 5px; background: #1a130c; border-radius: 3px; transform: translate(-50%, -100%); pointer-events: none; }
+  .wbar > i { display: block; height: 100%; background: var(--hp); border-radius: 3px; }
+  /* touch controls */
+  #touch { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
+  #stick { position: absolute; left: 24px; bottom: calc(env(safe-area-inset-bottom, 0px) + 40px); width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(243,234,217,.35); background: rgba(43,32,22,.35); pointer-events: auto; }
+  #knob { position: absolute; left: 50%; top: 50%; width: 48px; height: 48px; margin: -24px; border-radius: 50%; background: rgba(243,234,217,.7); }
+  #btns { position: absolute; right: 20px; bottom: calc(env(safe-area-inset-bottom, 0px) + 36px); display: grid; grid-template-columns: repeat(2, 64px); gap: 10px; pointer-events: auto; }
+  .tb { width: 64px; height: 64px; border-radius: 50%; border: 2px solid rgba(243,234,217,.4); background: rgba(43,32,22,.6); color: var(--ink); font-family: var(--display); font-size: 13px; padding: 0; display: grid; place-items: center; line-height: 1.1; }
+  .tb small { color: var(--ink-dim); font-size: 10px; }
+  .tb.cd { color: var(--ink-dim); }
+  #atk { grid-column: 2; grid-row: 1 / span 2; width: 80px; height: 80px; align-self: end; background: rgba(232,150,58,.55); }
+  #atk.cd { background: rgba(43,32,22,.6); }
+  @media (hover: hover) and (pointer: fine) { #touch { display: none; } }
+  @media (hover: none) { #hint { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .float, #toast, .bar > i { transition: none; } }
+</style>
+
+<div id="game"></div>
+
+<div id="stats" class="hud panel">
+  <div class="name"><span>Dog Knight</span><span id="lvl">Lv 1</span></div>
+  <div class="bar"><i id="hpbar"></i></div>
+  <div class="row"><span>HP</span><b id="hp">155 / 155</b></div>
+  <div class="bar exp"><i id="expbar"></i></div>
+  <div class="row"><span>EXP</span><b id="exp">0 / 50</b></div>
+  <div class="row"><span>ATK / DEF</span><b id="atkdef">17 / 9</b></div>
+</div>
+<div id="bag" class="hud panel">
+  <div class="name">กระเป๋า</div>
+  <div class="row"><span>Wolf Fang</span><b id="fang">0</b></div>
+  <div class="row"><span>Wolf Hide</span><b id="hide">0</b></div>
+  <div class="row"><span>Iron Ore</span><b id="ore">0</b></div>
+  <div class="row"><span>Gold</span><b id="gold">0</b></div>
+  <div class="row"><span>อาวุธ</span><b id="weap">Wooden Sword</b></div>
+</div>
+<div id="hint" class="hud">WASD เดิน · J / Space ตี · K Slash · L / Shift Dash · เดินไปหาช่างตีเหล็กในเมืองเพื่อ craft</div>
+<div id="craft" class="hud panel" hidden>
+  <h2>ช่างตีเหล็ก</h2>
+  <p>Wolf Fang Sword — ATK +18, Crit +2%</p>
+  <div class="need">
+    <span>Wolf Fang</span><span id="n-fang">0 / 10</span>
+    <span>Iron Ore</span><span id="n-ore">0 / 5</span>
+    <span>Gold</span><span id="n-gold">0 / 50</span>
+  </div>
+  <button id="craftbtn" type="button" disabled>Craft</button>
+</div>
+<div id="toast" class="hud"></div>
+<div id="dead" class="hud" hidden>ตายแล้ว… กลับเมืองใน <span id="deadt">3</span></div>
+
+<div id="touch">
+  <div id="stick"><div id="knob"></div></div>
+  <div id="btns">
+    <button class="tb" id="slash" type="button">Slash<small>K</small></button>
+    <button class="tb" id="atk" type="button">ตี</button>
+    <button class="tb" id="dash" type="button">Dash<small>L</small></button>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import * as SkeletonUtils from "three/addons/utils/SkeletonUtils.js";
+
+// ---------------------------------------------------------------- data (mirrors the M1 spec tables)
+const F = { HP_Base: 100, HP_PerVIT: 10, HP_PerLevel: 5, ATK_PerSTR: 2, ATK_PerDEX: 0.5, DEF_PerVIT: 1,
+            Crit_Base: 5, Crit_PerLUK: 0.5, Crit_Cap: 50, Crit_Mult: 1.5, Dodge_PerAGI: 0.3, Dodge_Cap: 30,
+            Hit_Base: 90, Hit_PerDEX: 0.2, Dmg_VarMin: 0.95, Dmg_VarMax: 1.05 };
+const ITEMS = {
+  WOODEN_SWORD:    { name: "Wooden Sword",    mods: { ATK: 5 } },
+  WOLF_FANG_SWORD: { name: "Wolf Fang Sword", mods: { ATK: 18, Crit: 2 } },
+  STARTER_CHEST:   { mods: { DEF: 3 } }, STARTER_BOOTS: { mods: { DEF: 1 } },
+};
+const WOLF = { level: 2, STR: 9, AGI: 8, VIT: 6, INT: 1, DEX: 7, LUK: 3, exp: 20, aggro: 5, leash: 12, respawn: 10,
+               bite: { windup: 0.55, active: 0.1, recovery: 1.15, reach: 1.3 } };
+const DROPS = [ ["fang", 0.6, 1, 2], ["hide", 0.4, 1, 1], ["ore", 0.3, 1, 2], ["gold", 1, 5, 15] ];
+const RECIPE = { fang: 10, ore: 5, gold: 50 };
+const LEVELS = l => 50 * l;
+
+function derive(u) {
+  const m = u.equip ? Object.values(u.equip).reduce((a, id) => { for (const [k, v] of Object.entries(ITEMS[id].mods)) a[k] = (a[k] || 0) + v; return a; }, {}) : {};
+  u.maxHP = F.HP_Base + u.VIT * F.HP_PerVIT + u.level * F.HP_PerLevel;
+  u.ATK = u.STR * F.ATK_PerSTR + u.DEX * F.ATK_PerDEX + (m.ATK || 0);
+  u.DEF = u.VIT * F.DEF_PerVIT + (m.DEF || 0);
+  u.Crit = Math.min(F.Crit_Cap, F.Crit_Base + u.LUK * F.Crit_PerLUK + (m.Crit || 0));
+  u.Dodge = Math.min(F.Dodge_Cap, u.AGI * F.Dodge_PerAGI);
+  u.Hit = F.Hit_Base + u.DEX * F.Hit_PerDEX;
+}
+function damage(src, dst, coef) {   // BKDamageExecCalc
+  if (Math.random() * 100 > src.Hit - dst.Dodge) return { miss: true, dmg: 0 };
+  const crit = Math.random() * 100 < src.Crit;
+  const raw = Math.max(1, src.ATK * coef - dst.DEF) * (crit ? F.Crit_Mult : 1) * (F.Dmg_VarMin + Math.random() * (F.Dmg_VarMax - F.Dmg_VarMin));
+  return { crit, dmg: Math.floor(raw) };
+}
+
+// ---------------------------------------------------------------- scene
+const root = document.getElementById("game");
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+root.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xa9d3ef);
+scene.fog = new THREE.Fog(0xa9d3ef, 28, 50);
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+const CAM_OFF = new THREE.Vector3(0, 7.4, 7.4);   // pitch -45°, fixed yaw (spec §5.17)
+
+const hemi = new THREE.HemisphereLight(0xcfe6ff, 0x4a6a2e, 0.75); scene.add(hemi);
+const sun = new THREE.DirectionalLight(0xffedd0, 2.2); sun.position.set(6, 12, 4); sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0005; sun.shadow.normalBias = 0.02; sun.shadow.camera.left = sun.shadow.camera.bottom = -20; sun.shadow.camera.right = sun.shadow.camera.top = 20;
+scene.add(sun); scene.add(sun.target);
+
+// ---------------------------------------------------------------- post (depth-edge outline + vignette; the "2.5D" read from GDD §2.1)
+const rt = new THREE.WebGLRenderTarget(2, 2, { type: THREE.HalfFloatType, samples: 4 }); rt.depthTexture = new THREE.DepthTexture(2, 2);
+const postMat = new THREE.ShaderMaterial({
+  uniforms: { tDiffuse: { value: rt.texture }, tDepth: { value: rt.depthTexture }, res: { value: new THREE.Vector2(2, 2) }, near: { value: 0.1 }, far: { value: 100 }, outlineColor: { value: new THREE.Color(0x2a1608) } },
+  vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }`,
+  fragmentShader: `#include <packing>
+    uniform sampler2D tDiffuse, tDepth; uniform vec2 res; uniform float near, far; uniform vec3 outlineColor; varying vec2 vUv;
+    float lz(vec2 uv) { return -perspectiveDepthToViewZ(texture2D(tDepth, uv).x, near, far); }
+    void main() {
+      vec4 c = texture2D(tDiffuse, vUv); vec2 px = 1.0 / res; float z0 = lz(vUv);
+      float e = abs(lz(vUv + vec2(px.x, 0.)) - z0) + abs(lz(vUv - vec2(px.x, 0.)) - z0) + abs(lz(vUv + vec2(0., px.y)) - z0) + abs(lz(vUv - vec2(0., px.y)) - z0);
+      float edge = smoothstep(0.02, 0.06, e / z0);
+      c.rgb = mix(c.rgb, outlineColor, edge * 0.8);
+      float v = smoothstep(1.4, 0.6, length((vUv - 0.5) * vec2(res.x / res.y, 1.0)));
+      c.rgb *= mix(0.78, 1.0, v);
+      gl_FragColor = c;
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+    }`, depthTest: false, depthWrite: false });
+postMat.toneMapped = true;
+const postScene = new THREE.Scene(); postScene.add(new THREE.Mesh(new THREE.PlaneGeometry(2, 2), postMat)); const postCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+
+const grad = new THREE.DataTexture(new Uint8Array([70, 70, 70, 255, 160, 160, 160, 255, 255, 255, 255, 255]), 3, 1, THREE.RGBAFormat);
+grad.minFilter = grad.magFilter = THREE.NearestFilter; grad.needsUpdate = true;
+const toon = (color, extra = {}) => new THREE.MeshToonMaterial({ color, gradientMap: grad, ...extra });
+
+// ---------------------------------------------------------------- assets
+const loader = new GLTFLoader();
+const load = url => new Promise((res, rej) => loader.load(url, g => res(g.scene), undefined, rej));
+// textures must come in as <img src="data:..."> — the artifact CSP blocks blob: URLs and fetch(), which ImageBitmapLoader uses
+loader.register(parser => { parser.textureLoader = new THREE.TextureLoader(parser.options.manager); return { name: "BK_ForceImgTextures" }; });
+async function loadGlb(name) {   // embedded (published build) or fetched file (local dev)
+  const emb = document.getElementById("glb-" + name);            // base64 GLB; textured ones carry images as data: URIs
+  if (emb) { const bin = Uint8Array.from(atob(emb.textContent.trim()), c => c.charCodeAt(0)); return new Promise((res, rej) => loader.parse(bin.buffer, "", g => res(g.scene), rej)); }
+  return load((name.startsWith("env_") ? "assets/env/" + name.slice(4) : "assets/" + name) + ".glb");
+}
+const texLoader = new THREE.TextureLoader();
+function loadTex(name, srgb = true) {   // embedded data: URI (published) or assets/env/<name>.jpg (local)
+  const emb = document.getElementById("img-" + name);
+  const t = texLoader.load(emb ? emb.textContent.trim() : "assets/env/" + name + ".jpg");
+  t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = srgb ? THREE.SRGBColorSpace : THREE.NoColorSpace; t.anisotropy = 4; return t;
+}
+
+// ---------------------------------------------------------------- world (env kit from work/blender/build_env_kit.py; layout mirrors the diorama)
+const KIT = ["SM_Tree_Round", "SM_Tree_Pine", "SM_Bush", "SM_Rock_A", "SM_Rock_B", "SM_Fence", "SM_Flower", "SM_House", "SM_Lamp", "SM_Barrel", "SM_Crate", "SM_Anvil"];
+const kit = Object.fromEntries(await Promise.all(KIT.map(async n => [n, await loadGlb("env_" + n)])));
+for (const g of Object.values(kit)) g.traverse(n => { if (n.isMesh) { n.material = toon(0xffffff, { vertexColors: true, emissive: n.material.emissive, emissiveIntensity: 1 }); n.castShadow = n.receiveShadow = true; } });
+function groundPatch(geo, tex, repeat, y = 0, tint = 0xffffff) {
+  const map = loadTex(`T_Ground_${tex}_BaseColor`), nrm = loadTex(`T_Ground_${tex}_Normal`, false);
+  map.repeat.set(repeat, repeat); nrm.repeat.set(repeat, repeat);
+  const m = new THREE.Mesh(geo, toon(tint, { map, normalMap: nrm, normalScale: new THREE.Vector2(0.5, 0.5) }));
+  m.rotation.x = -Math.PI / 2; m.position.y = y; m.receiveShadow = true; scene.add(m); return m;
+}
+groundPatch(new THREE.PlaneGeometry(90, 90), "Grass", 24);
+groundPatch(new THREE.CircleGeometry(4.6, 48), "Cobble", 4.5, 0.012, 0xb9b3ad);
+const pathMesh = groundPatch(new THREE.PlaneGeometry(2.6, 16), "Dirt", 2.2, 0.008, 0xd9cdb8); pathMesh.position.z = -11;
+const solids = [];
+const RAD = { SM_House: 2.3, SM_Tree_Round: 0.45, SM_Tree_Pine: 0.35, SM_Rock_A: 0.7, SM_Rock_B: 0.45, SM_Barrel: 0.4, SM_Crate: 0.45, SM_Anvil: 0.7, SM_Lamp: 0.15, SM_Bush: 0.5, SM_Fence: 0 };
+function put(name, x, z, ry = 0, s = 1) {
+  const o = kit[name].clone(); o.position.set(x, 0, z); o.rotation.y = ry; o.scale.setScalar(s); scene.add(o);
+  if (RAD[name]) solids.push({ x, z, r: RAD[name] * s + 0.25 }); return o;
+}
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+// town (safe zone r=7): houses south/east/west, smith east, lamps at the path mouth
+put("SM_House", -6.5, 3.2, 0.35); put("SM_House", 6.8, 2.6, -0.45, 0.92); put("SM_House", -6.2, -3.6, 2.3, 0.88);
+const smith = { x: 4.6, z: -3.4 };
+put("SM_Anvil", smith.x, smith.z, -0.6); put("SM_Barrel", 5.9, -2.2, 0); put("SM_Barrel", 6.5, -3.0, 0.4, 0.9);
+put("SM_Crate", -3.6, -3.2, 0.3); put("SM_Crate", -4.2, -2.6, 0.9, 0.8); put("SM_Crate", -3.7, -3.1, 0.6, 0.7).position.y = 0.7 * 0.8;
+put("SM_Lamp", 2.4, -5.2, 2.6); put("SM_Lamp", -2.4, -5.2, 0.5);
+for (const [x, z] of [[-3.4, -7.2], [3.4, -7.2], [-3.4, -9.4], [3.4, -9.4]]) put("SM_Fence", x, z, Math.PI / 2);
+const signTx = (() => { const c = document.createElement("canvas"); c.width = 256; c.height = 96; const g = c.getContext("2d");
+  g.fillStyle = "#3a2c1e"; g.fillRect(0, 0, 256, 96); g.fillStyle = "#f3ead9"; g.font = "600 40px Fredoka, sans-serif"; g.textAlign = "center"; g.fillText("ช่างตีเหล็ก", 128, 62); return new THREE.CanvasTexture(c); })();
+const post = new THREE.Mesh(new THREE.BoxGeometry(0.14, 2.0, 0.14), toon(0x5a3a22)); post.position.set(smith.x + 1.4, 1.0, smith.z + 0.6); post.castShadow = true; scene.add(post);
+const sign = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.6), new THREE.MeshBasicMaterial({ map: signTx })); sign.position.set(smith.x + 1.4, 1.5, smith.z + 0.7); scene.add(sign);
+// town ring + field forest
+for (let i = 0; i < 14; i++) { const a = rnd() * 6.28, r = 9.5 + rnd() * 2.5; put(i % 3 ? "SM_Tree_Round" : "SM_Tree_Pine", Math.cos(a) * r, Math.sin(a) * r * 0.7 + 3, rnd() * 6.28, 0.9 + rnd() * 0.4); }
+for (let i = 0; i < 60; i++) { const x = (rnd() - 0.5) * 84, z = -9 - rnd() * 34; if (Math.hypot(x, z) > 10 && Math.abs(x) > 2.2) put(rnd() < 0.65 ? "SM_Tree_Round" : "SM_Tree_Pine", x, z, rnd() * 6.28, 0.75 + rnd() * 0.7); }
+for (let i = 0; i < 22; i++) { const x = (rnd() - 0.5) * 80, z = -6 - rnd() * 36; if (Math.hypot(x, z) > 8) put("SM_Bush", x, z, rnd() * 6.28, 0.7 + rnd() * 0.6); }
+for (let i = 0; i < 14; i++) { const x = (rnd() - 0.5) * 76, z = -8 - rnd() * 34; if (Math.hypot(x, z) > 9) put(rnd() < 0.5 ? "SM_Rock_A" : "SM_Rock_B", x, z, rnd() * 6.28, 0.8 + rnd() * 0.6); }
+for (let i = 0; i < 90; i++) { const x = (rnd() - 0.5) * 80, z = 6 - rnd() * 46; if (Math.hypot(x, z) > 5.5) put("SM_Flower", x, z, rnd() * 6.28, 0.8 + rnd() * 0.6); }
+
+// ---------------------------------------------------------------- characters
+const [shibaSrc, wolfSrc, knightSrc] = await Promise.all([loadGlb("shiba"), loadGlb("wolf"), loadGlb("knight")]);
+
+function rig(src) {
+  const o = SkeletonUtils.clone(src);
+  o.traverse(n => { if (n.isMesh) { n.castShadow = true; n.frustumCulled = false;
+    // baked-texture meshes keep their PBR maps (toon shading on top); vertex-colour placeholders go flat toon
+    const m = n.material; n.material = m && m.map ? new THREE.MeshToonMaterial({ map: m.map, normalMap: m.normalMap, emissiveMap: m.emissiveMap, emissive: m.emissiveMap ? 0xffffff : 0x000000, gradientMap: grad }) : toon(0xffffff, { vertexColors: true }); } });
+  const b = {}; o.traverse(n => { if (n.isBone) b[n.name] = n; });
+  for (const k in b) b[k].userData.rest = b[k].quaternion.clone();
+  return { obj: o, bones: b };
+}
+const state = { t: 0 };
+function makeActor(src, opts) {
+  const { obj, bones } = rig(src);
+  scene.add(obj);
+  return { obj, bones, pos: obj.position, yaw: 0, hp: 1, anim: { walk: 0, swing: 0, hit: 0 }, alive: true, ...opts };
+}
+const swingBone = (a, name, ax, ang) => { const b = a.bones[name]; if (!b) return; b.quaternion.copy(b.userData.rest).multiply(new THREE.Quaternion().setFromAxisAngle(ax, ang)); };
+const X = new THREE.Vector3(1, 0, 0), Z = new THREE.Vector3(0, 0, 1);
+function animate(a, dt, moving) {
+  const s = a.anim; s.walk = moving ? s.walk + dt * 11 : 0;
+  const k = moving ? 0.55 : 0.05 * Math.sin(state.t * 2);
+  swingBone(a, "thigh_l", X, Math.sin(s.walk) * k); swingBone(a, "thigh_r", X, -Math.sin(s.walk) * k);
+  const arm = s.swing > 0 ? -1.9 * Math.sin(Math.min(1, s.swing / 0.25) * Math.PI) : 0;
+  swingBone(a, "upperarm_r", X, arm + (moving ? -Math.sin(s.walk) * 0.5 : 0));
+  swingBone(a, "upperarm_l", X, moving ? Math.sin(s.walk) * 0.5 : 0);
+  swingBone(a, "head", Z, s.hit > 0 ? Math.sin(s.hit * 20) * 0.15 : 0);
+  swingBone(a, "tail_01", X, Math.sin(state.t * 6) * 0.25);
+  a.obj.position.y = moving ? Math.abs(Math.sin(s.walk)) * 0.04 : 0;
+  a.obj.rotation.y = a.yaw;
+  if (s.swing > 0) s.swing -= dt; if (s.hit > 0) s.hit -= dt;
+  if (!a.alive) { a.obj.rotation.z = Math.min(1.5, a.obj.rotation.z + dt * 5); a.obj.position.y = -0.1; } else a.obj.rotation.z = 0;
+}
+
+// player
+const P = makeActor(knightSrc, { level: 1, exp: 0, STR: 5, AGI: 5, VIT: 5, INT: 5, DEX: 5, LUK: 5, points: 0,
+  equip: { weapon: "WOODEN_SWORD", chest: "STARTER_CHEST", boots: "STARTER_BOOTS" }, bag: { fang: 0, hide: 0, ore: 0, gold: 0 }, cd: { atk: 0, slash: 0, dash: 0 }, dash: 0 });
+derive(P); P.hp = P.maxHP; P.pos.set(0, 0, 2); P.yaw = 0;   // face the camera on spawn
+// starter wooden sword comes from the Shiba rig (same skeleton -> same socket transform); the knight's gem sword is the crafted one
+const woodenSrc = rig(shibaSrc).obj.getObjectByName("SM_WoodenSword"); woodenSrc.removeFromParent(); P.bones.socket_hand_r.add(woodenSrc);
+const swordMesh = { WOODEN_SWORD: woodenSrc, WOLF_FANG_SWORD: P.obj.getObjectByName("SM_KnightSword") };
+function showWeapon() { for (const k in swordMesh) swordMesh[k].visible = k === P.equip.weapon; }
+showWeapon();
+
+// wolves
+const spawners = [ { x: -12, z: -16 }, { x: 10, z: -18 }, { x: 0, z: -28 } ];
+const wolves = [];
+for (const sp of spawners) for (let i = 0; i < 2; i++) {
+  const w = makeActor(wolfSrc, { ...WOLF, home: new THREE.Vector3(sp.x + (i ? 2 : -2), 0, sp.z), target: null, mode: "wander", timer: 0, wanderTo: null, bite: 0, dead: 0 });
+  w.obj.scale.setScalar(0.85); derive(w); w.hp = w.maxHP; w.pos.copy(w.home); wolves.push(w);
+}
+
+// ---------------------------------------------------------------- input
+const keys = {}; addEventListener("keydown", e => { keys[e.code] = true; if (["Space", "KeyJ"].includes(e.code)) act("atk"); if (e.code === "KeyK") act("slash"); if (["KeyL", "ShiftLeft", "ShiftRight"].includes(e.code)) act("dash"); if (e.code === "Space") e.preventDefault(); });
+addEventListener("keyup", e => keys[e.code] = false);
+const stick = { x: 0, y: 0, id: null }; const stickEl = document.getElementById("stick"), knob = document.getElementById("knob");
+stickEl.addEventListener("pointerdown", e => { stick.id = e.pointerId; stickEl.setPointerCapture(e.pointerId); moveStick(e); });
+stickEl.addEventListener("pointermove", e => { if (e.pointerId === stick.id) moveStick(e); });
+const endStick = e => { if (e.pointerId === stick.id) { stick.id = null; stick.x = stick.y = 0; knob.style.transform = ""; } };
+stickEl.addEventListener("pointerup", endStick); stickEl.addEventListener("pointercancel", endStick);
+function moveStick(e) { const r = stickEl.getBoundingClientRect(); let dx = (e.clientX - r.left - r.width / 2) / (r.width / 2), dy = (e.clientY - r.top - r.height / 2) / (r.height / 2);
+  const l = Math.hypot(dx, dy); if (l > 1) { dx /= l; dy /= l; } stick.x = dx; stick.y = dy; knob.style.transform = `translate(${dx * 36}px, ${dy * 36}px)`; }
+for (const id of ["atk", "slash", "dash"]) document.getElementById(id).addEventListener("pointerdown", e => { e.preventDefault(); act(id); });
+
+// ---------------------------------------------------------------- combat
+const floats = [];
+function floatText(pos, text, cls) { const el = document.createElement("div"); el.className = "float " + cls; el.textContent = text; document.body.appendChild(el); floats.push({ el, pos: pos.clone().add(new THREE.Vector3(0, 1.1, 0)), t: 0 }); }
+function inCone(a, b, range, deg) { const d = new THREE.Vector3().subVectors(b.pos, a.pos); if (d.length() > range) return false; const f = new THREE.Vector3(Math.sin(a.yaw), 0, Math.cos(a.yaw)); return f.angleTo(d.normalize()) < THREE.MathUtils.degToRad(deg / 2); }
+function hitWolf(w, coef) { const r = damage(P, w, coef); w.anim.hit = 0.3; if (r.miss) return floatText(w.pos, "MISS", "miss");
+  w.hp -= r.dmg; floatText(w.pos, r.dmg, r.crit ? "crit" : "hit"); if (w.mode !== "leash") w.target = P; if (w.hp <= 0) killWolf(w); }
+function act(kind) {
+  if (!P.alive) return;
+  if (kind === "atk" && P.cd.atk <= 0) { P.cd.atk = 0.6; P.anim.swing = 0.25; const t = wolves.filter(w => w.alive && inCone(P, w, 1.4, 100)).sort((a, b) => a.pos.distanceTo(P.pos) - b.pos.distanceTo(P.pos))[0]; if (t) hitWolf(t, 1.0); }
+  if (kind === "slash" && P.cd.slash <= 0) { P.cd.slash = 4; P.anim.swing = 0.3; wolves.filter(w => w.alive && inCone(P, w, 2.4, 140)).forEach(w => hitWolf(w, 1.6)); }
+  if (kind === "dash" && P.cd.dash <= 0) { P.cd.dash = 3; P.dash = 0.2; }
+}
+function killWolf(w) { w.alive = false; w.dead = WOLF.respawn; w.target = null;
+  const got = []; for (const [item, chance, lo, hi] of DROPS) if (Math.random() < chance) { const n = lo + Math.floor(Math.random() * (hi - lo + 1)); P.bag[item] += n; got.push(`${item === "gold" ? "Gold" : item === "fang" ? "Wolf Fang" : item === "hide" ? "Wolf Hide" : "Iron Ore"} +${n}`); }
+  toast(got.join("  ·  ")); gainExp(WOLF.exp); }
+function gainExp(n) { P.exp += n; while (P.exp >= LEVELS(P.level) && P.level < 20) { P.exp -= LEVELS(P.level); P.level++; P.points += 5; P.STR += 2; P.VIT += 2; P.DEX += 1; derive(P); P.hp = P.maxHP; setTimeout(() => toast(`Level Up! Lv ${P.level}`), 700); } }
+function hurtPlayer(w) { const r = damage(w, P, 1); if (r.miss) return floatText(P.pos, "MISS", "miss"); P.hp -= r.dmg; P.anim.hit = 0.3; floatText(P.pos, "-" + r.dmg, "taken");
+  if (P.hp <= 0) { P.hp = 0; P.alive = false; P.deadT = 3; document.getElementById("dead").hidden = false; } }
+let toastT; function toast(s) { const el = document.getElementById("toast"); el.textContent = s; el.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("on"), 2200); }
+
+// craft
+const craftEl = document.getElementById("craft"), craftBtn = document.getElementById("craftbtn");
+craftBtn.addEventListener("click", () => { if (P.equip.weapon !== "WOODEN_SWORD") return; for (const k in RECIPE) if (P.bag[k] < RECIPE[k]) return;
+  for (const k in RECIPE) P.bag[k] -= RECIPE[k]; P.equip.weapon = "WOLF_FANG_SWORD"; derive(P); showWeapon(); toast("Craft สำเร็จ: Wolf Fang Sword"); });
+
+// ---------------------------------------------------------------- loop
+function collide(pos, r) { for (const s of solids) { const dx = pos.x - s.x, dz = pos.z - s.z, d = Math.hypot(dx, dz); if (d < s.r + r && d > 0) { pos.x = s.x + dx / d * (s.r + r); pos.z = s.z + dz / d * (s.r + r); } }
+  pos.x = THREE.MathUtils.clamp(pos.x, -42, 42); pos.z = THREE.MathUtils.clamp(pos.z, -42, 12); }
+const inTown = p => Math.hypot(p.x, p.z) < 7;
+const wbars = new Map();
+function ui() {
+  document.getElementById("lvl").textContent = "Lv " + P.level;
+  document.getElementById("hpbar").style.width = (P.hp / P.maxHP * 100) + "%"; document.getElementById("hp").textContent = `${Math.ceil(P.hp)} / ${P.maxHP}`;
+  document.getElementById("expbar").style.width = (P.exp / LEVELS(P.level) * 100) + "%"; document.getElementById("exp").textContent = `${P.exp} / ${LEVELS(P.level)}`;
+  document.getElementById("atkdef").textContent = `${P.ATK} / ${P.DEF}`;
+  for (const k of ["fang", "hide", "ore", "gold"]) document.getElementById(k).textContent = P.bag[k];
+  document.getElementById("weap").textContent = ITEMS[P.equip.weapon].name;
+  const near = P.alive && Math.hypot(P.pos.x - smith.x, P.pos.z - smith.z) < 2.6 && P.equip.weapon === "WOODEN_SWORD";
+  craftEl.hidden = !near; if (near) { let ok = true; for (const k in RECIPE) { const el = document.getElementById("n-" + k); el.textContent = `${P.bag[k]} / ${RECIPE[k]}`; const good = P.bag[k] >= RECIPE[k]; el.className = good ? "ok" : "no"; ok &&= good; } craftBtn.disabled = !ok; }
+  for (const [id, key] of [["atk", "atk"], ["slash", "slash"], ["dash", "dash"]]) document.getElementById(id).classList.toggle("cd", P.cd[key] > 0);
+}
+function project(v) { const p = v.clone().project(camera); return [(p.x + 1) / 2 * innerWidth, (1 - p.y) / 2 * innerHeight, p.z < 1]; }
+const clock = new THREE.Clock();
+function frame() {
+  const dt = Math.min(0.1, clock.getDelta()); state.t += dt;
+  for (const k in P.cd) P.cd[k] = Math.max(0, P.cd[k] - dt);
+  // player move
+  let mx = (keys.KeyD || keys.ArrowRight ? 1 : 0) - (keys.KeyA || keys.ArrowLeft ? 1 : 0) + stick.x, mz = (keys.KeyS || keys.ArrowDown ? 1 : 0) - (keys.KeyW || keys.ArrowUp ? 1 : 0) + stick.y;
+  const ml = Math.hypot(mx, mz); let moving = false;
+  if (P.alive) {
+    if (ml > 0.15) { mx /= Math.max(1, ml); mz /= Math.max(1, ml); P.yaw = Math.atan2(mx, mz); moving = P.anim.swing <= 0; }
+    let speed = moving ? 4.2 : 0; if (P.dash > 0) { P.dash -= dt; speed = 20; moving = true; if (ml <= 0.15) { mx = Math.sin(P.yaw); mz = Math.cos(P.yaw); } }
+    if (moving) { P.pos.x += mx * speed * dt; P.pos.z += mz * speed * dt; collide(P.pos, 0.35); }
+    if (inTown(P.pos) && P.hp < P.maxHP) P.hp = Math.min(P.maxHP, P.hp + dt * 12);   // town rest
+  } else { P.deadT -= dt; document.getElementById("deadt").textContent = Math.ceil(P.deadT); if (P.deadT <= 0) { P.alive = true; P.hp = P.maxHP; P.pos.set(0, 0, 2); document.getElementById("dead").hidden = true; } }
+  animate(P, dt, moving);
+  // wolves
+  for (const w of wolves) {
+    if (!w.alive) { w.dead -= dt; if (w.dead <= 0) { w.alive = true; w.hp = w.maxHP; w.pos.copy(w.home); w.mode = "wander"; w.obj.rotation.z = 0; } animate(w, dt, false); continue; }
+    const dP = w.pos.distanceTo(P.pos), dH = w.pos.distanceTo(w.home); let mv = false;
+    if (w.mode !== "leash" && P.alive && !inTown(P.pos) && (dP < WOLF.aggro || w.target)) w.target = P; else w.target = null;
+    if (w.target && dH > WOLF.leash) { w.mode = "leash"; w.target = null; }
+    if (w.mode === "leash") { if (dH < 0.5) { w.mode = "wander"; w.hp = w.maxHP; } else { mv = stepTo(w, w.home, 4.5, dt); } }
+    else if (w.target) {
+      w.yaw = Math.atan2(P.pos.x - w.pos.x, P.pos.z - w.pos.z);
+      if (w.bite > 0) { w.bite -= dt; const b = WOLF.bite; if (!w.bit && w.bite < b.recovery + b.active && w.bite > b.recovery) { w.bit = true; if (dP < b.reach + 0.3 && P.alive) hurtPlayer(w); } if (w.bite <= b.recovery) w.anim.swing = 0; }
+      else if (dP < WOLF.bite.reach) { w.bite = WOLF.bite.windup + WOLF.bite.active + WOLF.bite.recovery; w.bit = false; w.anim.swing = 0.6; }
+      else mv = stepTo(w, P.pos, 3.6, dt);
+    } else { w.timer -= dt; if (w.timer <= 0) { w.timer = 2 + Math.random() * 3; w.wanderTo = Math.random() < 0.5 ? null : w.home.clone().add(new THREE.Vector3((Math.random() - 0.5) * 6, 0, (Math.random() - 0.5) * 6)); }
+      if (w.wanderTo && w.pos.distanceTo(w.wanderTo) > 0.3) mv = stepTo(w, w.wanderTo, 1.4, dt); }
+    animate(w, dt, mv);
+  }
+  // camera + sun follow
+  camera.position.copy(P.pos).add(CAM_OFF); camera.lookAt(P.pos.x, P.pos.y + 0.5, P.pos.z);
+  sun.position.set(P.pos.x + 6, 12, P.pos.z + 4); sun.target.position.copy(P.pos);
+  // overlays
+  for (let i = floats.length - 1; i >= 0; i--) { const f = floats[i]; f.t += dt; f.pos.y += dt * 0.8; const [x, y, ok] = project(f.pos); f.el.style.left = x + "px"; f.el.style.top = y + "px"; f.el.style.opacity = ok ? 1 - f.t / 1.1 : 0; if (f.t > 1.1) { f.el.remove(); floats.splice(i, 1); } }
+  for (const w of wolves) { let el = wbars.get(w); if (!el) { el = document.createElement("div"); el.className = "wbar"; el.innerHTML = "<i></i>"; document.body.appendChild(el); wbars.set(w, el); }
+    const [x, y, ok] = project(w.pos.clone().add(new THREE.Vector3(0, 1.05, 0))); const show = ok && w.alive && w.hp < w.maxHP && w.pos.distanceTo(P.pos) < 14; el.style.display = show ? "block" : "none"; if (show) { el.style.left = x + "px"; el.style.top = y + "px"; el.firstChild.style.width = (w.hp / w.maxHP * 100) + "%"; } }
+  ui();
+  renderer.setRenderTarget(rt); renderer.render(scene, camera); renderer.setRenderTarget(null); renderer.render(postScene, postCam);
+  requestAnimationFrame(frame);
+}
+function stepTo(a, target, speed, dt) { const d = new THREE.Vector3().subVectors(target, a.pos); d.y = 0; const l = d.length(); if (l < 0.05) return false; d.divideScalar(l); a.yaw = Math.atan2(d.x, d.z); a.pos.addScaledVector(d, Math.min(l, speed * dt)); collide(a.pos, 0.3); return true; }
+function resize() { renderer.setSize(innerWidth, innerHeight); camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
+  const w = Math.floor(innerWidth * renderer.getPixelRatio()), h = Math.floor(innerHeight * renderer.getPixelRatio()); rt.setSize(w, h); postMat.uniforms.res.value.set(w, h); }
+addEventListener("resize", resize); resize(); frame();
+window.__bk = { P, wolves, keys, act, hurtPlayer };
+</script>

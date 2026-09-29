@@ -1,0 +1,11 @@
+{
+  "maxLevel": 20,
+  "statPointsPerLevel": 5,
+  "expToNext": "50 * level",
+  "levelUpGrowth": {
+    "STR": 2,
+    "VIT": 2,
+    "DEX": 1
+  },
+  "startGold": 20
+}

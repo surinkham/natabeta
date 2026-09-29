@@ -1,0 +1,514 @@
+{
+  "RCP_WOLF_FANG_SWORD": {
+    "result": "WOLF_FANG_SWORD",
+    "count": 1,
+    "gold": 50,
+    "station": "Station.Craft.Blacksmith",
+    "ingredients": [
+      {
+        "item": "WOLF_FANG",
+        "count": 10
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 5
+      }
+    ]
+  },
+  "RCP_FUR_CLOAK": {
+    "result": "FUR_CLOAK",
+    "count": 1,
+    "gold": 80,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "FOX_PELT",
+        "count": 3
+      },
+      {
+        "item": "WOLF_HIDE",
+        "count": 2
+      },
+      {
+        "item": "BOAR_TUSK",
+        "count": 1
+      }
+    ]
+  },
+  "RCP_HERB_POTION": {
+    "result": "HP_POTION",
+    "count": 3,
+    "gold": 10,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "SHROOM_CAP",
+        "count": 4
+      }
+    ]
+  },
+  "RCP_LONGBOW": {
+    "result": "LONGBOW",
+    "count": 1,
+    "gold": 120,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "HEART_WOOD",
+        "count": 3
+      },
+      {
+        "item": "WOLF_HIDE",
+        "count": 2
+      }
+    ]
+  },
+  "RCP_ELVEN_BOW": {
+    "result": "ELVEN_BOW",
+    "count": 1,
+    "gold": 260,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "HEART_WOOD",
+        "count": 4
+      },
+      {
+        "item": "MOSS_HEART",
+        "count": 4
+      },
+      {
+        "item": "FOX_PELT",
+        "count": 2
+      }
+    ]
+  },
+  "RCP_ARCANE_STAFF": {
+    "result": "ARCANE_STAFF",
+    "count": 1,
+    "gold": 150,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "HEART_WOOD",
+        "count": 2
+      },
+      {
+        "item": "SLIME_JELLY",
+        "count": 8
+      },
+      {
+        "item": "SHROOM_CAP",
+        "count": 6
+      }
+    ]
+  },
+  "RCP_VOID_STAFF": {
+    "result": "VOID_STAFF",
+    "count": 1,
+    "gold": 380,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "VOID_SHARD",
+        "count": 5
+      },
+      {
+        "item": "HEART_WOOD",
+        "count": 3
+      },
+      {
+        "item": "SHADOW_FUR",
+        "count": 3
+      }
+    ]
+  },
+  "RCP_FROST_BLADE": {
+    "result": "FROST_BLADE",
+    "count": 1,
+    "gold": 240,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "FROST_CRYSTAL",
+        "count": 6
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 6
+      },
+      {
+        "item": "WOLF_FANG",
+        "count": 4
+      }
+    ]
+  },
+  "RCP_EMBER_SWORD": {
+    "result": "EMBER_SWORD",
+    "count": 1,
+    "gold": 320,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "MAGMA_CORE",
+        "count": 5
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 8
+      },
+      {
+        "item": "BEAR_CLAW",
+        "count": 2
+      }
+    ]
+  },
+  "RCP_MAGE_ROBE": {
+    "result": "MAGE_ROBE",
+    "count": 1,
+    "gold": 140,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "SLIME_JELLY",
+        "count": 6
+      },
+      {
+        "item": "FOX_PELT",
+        "count": 3
+      },
+      {
+        "item": "MOSS_HEART",
+        "count": 2
+      }
+    ]
+  },
+  "RCP_RANGER_BOOTS": {
+    "result": "RANGER_BOOTS",
+    "count": 1,
+    "gold": 110,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "WOLF_HIDE",
+        "count": 4
+      },
+      {
+        "item": "MOSS_HEART",
+        "count": 2
+      }
+    ]
+  },
+  "RCP_FROST_MAIL": {
+    "result": "FROST_MAIL",
+    "count": 1,
+    "gold": 300,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "FROST_CRYSTAL",
+        "count": 6
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 10
+      },
+      {
+        "item": "BEAR_CLAW",
+        "count": 2
+      }
+    ]
+  },
+  "RCP_EMBER_GAUNTLETS": {
+    "result": "EMBER_GAUNTLETS",
+    "count": 1,
+    "gold": 260,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "MAGMA_CORE",
+        "count": 3
+      },
+      {
+        "item": "BOAR_TUSK",
+        "count": 4
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 4
+      }
+    ]
+  },
+  "RCP_SHADOW_CLOAK": {
+    "result": "SHADOW_CLOAK",
+    "count": 1,
+    "gold": 340,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "VOID_SHARD",
+        "count": 4
+      },
+      {
+        "item": "SHADOW_FUR",
+        "count": 4
+      }
+    ]
+  },
+  "RCP_TOWER_SHIELD": {
+    "result": "TOWER_SHIELD",
+    "count": 1,
+    "gold": 220,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "IRON_ORE",
+        "count": 12
+      },
+      {
+        "item": "BEAR_CLAW",
+        "count": 3
+      }
+    ]
+  },
+  "RCP_SAND_HOOD": {
+    "result": "SAND_HOOD",
+    "count": 1,
+    "gold": 200,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "DUNE_SHELL",
+        "count": 6
+      },
+      {
+        "item": "WOLF_HIDE",
+        "count": 3
+      }
+    ]
+  },
+  "RCP_ELIXIR": {
+    "result": "ELIXIR",
+    "count": 2,
+    "gold": 60,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "MOSS_HEART",
+        "count": 1
+      },
+      {
+        "item": "MAGMA_CORE",
+        "count": 1
+      }
+    ]
+  },
+  "RCP_NIGHT_CLOAK": {
+    "result": "NIGHT_CLOAK",
+    "count": 1,
+    "gold": 180,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "BAT_WING",
+        "count": 8
+      },
+      {
+        "item": "MOON_FANG",
+        "count": 2
+      }
+    ]
+  },
+  "RCP_MANA_POTION": {
+    "result": "MANA_POTION",
+    "count": 2,
+    "gold": 10,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "SLIME_JELLY",
+        "count": 4
+      }
+    ]
+  },
+  "RCP_ALPHA_FANG_BLADE": {
+    "result": "ALPHA_FANG_BLADE",
+    "count": 1,
+    "gold": 500,
+    "station": "NPC_SMITH",
+    "secret": true,
+    "ingredients": [
+      {
+        "item": "ALPHA_FANG",
+        "count": 3
+      },
+      {
+        "item": "WOLF_FANG",
+        "count": 15
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 10
+      }
+    ]
+  },
+  "RCP_MOONWARD_MAIL": {
+    "result": "MOONWARD_MAIL",
+    "count": 1,
+    "gold": 450,
+    "station": "NPC_SMITH",
+    "secret": true,
+    "ingredients": [
+      {
+        "item": "MOON_FANG",
+        "count": 4
+      },
+      {
+        "item": "FROST_CRYSTAL",
+        "count": 6
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 12
+      }
+    ]
+  },
+  "RCP_INFERNO_STAFF": {
+    "result": "INFERNO_STAFF",
+    "count": 1,
+    "gold": 520,
+    "station": "NPC_SMITH",
+    "secret": true,
+    "ingredients": [
+      {
+        "item": "MAGMA_CORE",
+        "count": 6
+      },
+      {
+        "item": "VOID_SHARD",
+        "count": 3
+      },
+      {
+        "item": "HEART_WOOD",
+        "count": 4
+      }
+    ]
+  },
+  "RCP_STORM_BOW": {
+    "result": "STORM_BOW",
+    "count": 1,
+    "gold": 500,
+    "station": "NPC_SMITH",
+    "secret": true,
+    "ingredients": [
+      {
+        "item": "VOID_SHARD",
+        "count": 4
+      },
+      {
+        "item": "HEART_WOOD",
+        "count": 5
+      },
+      {
+        "item": "BAT_WING",
+        "count": 8
+      }
+    ]
+  },
+  "RCP_GEAR_MEADOW": {
+    "result": "GEAR_MEADOW",
+    "count": 1,
+    "gold": 260,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "MAT_MEADOW",
+        "count": 8
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 6
+      }
+    ]
+  },
+  "RCP_GEAR_GROVE": {
+    "result": "GEAR_GROVE",
+    "count": 1,
+    "gold": 285,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "MAT_GROVE",
+        "count": 8
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 6
+      }
+    ]
+  },
+  "RCP_GEAR_GLACIER": {
+    "result": "GEAR_GLACIER",
+    "count": 1,
+    "gold": 360,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "MAT_GLACIER",
+        "count": 8
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 6
+      }
+    ]
+  },
+  "RCP_GEAR_DUNE": {
+    "result": "GEAR_DUNE",
+    "count": 1,
+    "gold": 385,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "MAT_DUNE",
+        "count": 8
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 6
+      }
+    ]
+  },
+  "RCP_GEAR_CINDER": {
+    "result": "GEAR_CINDER",
+    "count": 1,
+    "gold": 435,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "MAT_CINDER",
+        "count": 8
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 6
+      }
+    ]
+  },
+  "RCP_GEAR_ECLIPSE": {
+    "result": "GEAR_ECLIPSE",
+    "count": 1,
+    "gold": 485,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "MAT_ECLIPSE",
+        "count": 8
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 6
+      }
+    ]
+  }
+}

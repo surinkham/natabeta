@@ -1,0 +1,223 @@
+{
+  "WOLF_FANG": {
+    "name": "Wolf Fang",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 5,
+    "icon": "🦷"
+  },
+  "WOLF_HIDE": {
+    "name": "Wolf Hide",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 8,
+    "icon": "🟫"
+  },
+  "IRON_ORE": {
+    "name": "Iron Ore",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 3,
+    "buy": 15,
+    "icon": "⛏"
+  },
+  "WOODEN_SWORD": {
+    "name": "Wooden Sword",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "mods": {
+      "ATK": 5
+    },
+    "visual": "VIS_WOODEN_SWORD",
+    "sell": 10,
+    "icon": "🗡"
+  },
+  "WOLF_FANG_SWORD": {
+    "name": "Wolf Fang Sword",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "mods": {
+      "ATK": 18,
+      "Crit": 2
+    },
+    "visual": "VIS_WOLF_FANG_SWORD",
+    "sell": 120,
+    "icon": "⚔"
+  },
+  "STARTER_CHEST": {
+    "name": "Starter Chest",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 3
+    },
+    "visual": "VIS_STARTER_CHEST",
+    "sell": 5,
+    "icon": "🎽"
+  },
+  "STARTER_BOOTS": {
+    "name": "Starter Boots",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Boots",
+    "mods": {
+      "DEF": 1
+    },
+    "visual": "VIS_STARTER_BOOTS",
+    "sell": 3,
+    "icon": "🥾"
+  },
+  "HP_POTION": {
+    "name": "HP Potion",
+    "type": "Consumable",
+    "maxStack": 99,
+    "heal": 60,
+    "cooldown": 1,
+    "buy": 20,
+    "sell": 5,
+    "icon": "🧪"
+  },
+  "KNIGHT_HELMET": {
+    "name": "Knight Helmet",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Head",
+    "mods": {
+      "DEF": 4
+    },
+    "visual": "VIS_KNIGHT_HELMET",
+    "sell": 40,
+    "buy": 160,
+    "icon": "⛑"
+  },
+  "KNIGHT_CHEST": {
+    "name": "Knight Cuirass",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 8
+    },
+    "visual": "VIS_KNIGHT_CHEST",
+    "sell": 60,
+    "buy": 240,
+    "icon": "🛡"
+  },
+  "KNIGHT_GLOVES": {
+    "name": "Knight Gauntlets",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Gloves",
+    "mods": {
+      "DEF": 2,
+      "ATK": 1
+    },
+    "visual": "VIS_KNIGHT_GLOVES",
+    "sell": 25,
+    "buy": 100,
+    "icon": "🧤"
+  },
+  "KNIGHT_BOOTS": {
+    "name": "Knight Greaves",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Boots",
+    "mods": {
+      "DEF": 3
+    },
+    "visual": "VIS_KNIGHT_BOOTS",
+    "sell": 30,
+    "buy": 120,
+    "icon": "👢"
+  },
+  "KNIGHT_CAPE": {
+    "name": "Paw Cape",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Back",
+    "mods": {
+      "DEF": 1,
+      "Crit": 1
+    },
+    "visual": "VIS_KNIGHT_CAPE",
+    "sell": 35,
+    "buy": 140,
+    "icon": "🧣"
+  },
+  "KITE_SHIELD": {
+    "name": "Kite Shield",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "OffHand",
+    "mods": {
+      "DEF": 6
+    },
+    "visual": "VIS_KITE_SHIELD",
+    "sell": 45,
+    "buy": 180,
+    "icon": "🛡"
+  },
+  "MERCHANT_SEAL": {
+    "name": "Merchant Seal",
+    "type": "Key",
+    "maxStack": 1,
+    "buy": 50,
+    "sell": 0,
+    "icon": "📜",
+    "bound": true
+  },
+  "ALPHA_FANG": {
+    "name": "Alpha Fang",
+    "type": "Material",
+    "maxStack": 20,
+    "sell": 90,
+    "icon": "🦷"
+  },
+  "MOUNT_HORSE": {
+    "name": "Horse Whistle",
+    "type": "Key",
+    "maxStack": 1,
+    "buy": 300,
+    "sell": 0,
+    "icon": "🐴",
+    "bound": true,
+    "desc": "เรียกม้า — วิ่งเร็ว 1.8 เท่า"
+  },
+  "FOX_PELT": {
+    "name": "Fox Pelt",
+    "type": "Material",
+    "maxStack": 30,
+    "sell": 18,
+    "icon": "🦊"
+  },
+  "BOAR_TUSK": {
+    "name": "Boar Tusk",
+    "type": "Material",
+    "maxStack": 30,
+    "sell": 26,
+    "icon": "🐗"
+  },
+  "SHADOW_FUR": {
+    "name": "Shadow Fur",
+    "type": "Material",
+    "maxStack": 30,
+    "sell": 40,
+    "icon": "🌑"
+  },
+  "FUR_CLOAK": {
+    "name": "Fur Cloak",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Back",
+    "mods": {
+      "DEF": 6,
+      "Crit": 2
+    },
+    "visual": "VIS_KNIGHT_CAPE",
+    "sell": 70,
+    "icon": "🧣"
+  }
+}

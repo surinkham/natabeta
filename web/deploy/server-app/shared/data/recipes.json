@@ -1,0 +1,38 @@
+{
+  "RCP_WOLF_FANG_SWORD": {
+    "result": "WOLF_FANG_SWORD",
+    "count": 1,
+    "gold": 50,
+    "station": "Station.Craft.Blacksmith",
+    "ingredients": [
+      {
+        "item": "WOLF_FANG",
+        "count": 10
+      },
+      {
+        "item": "IRON_ORE",
+        "count": 5
+      }
+    ]
+  },
+  "RCP_FUR_CLOAK": {
+    "result": "FUR_CLOAK",
+    "count": 1,
+    "gold": 80,
+    "station": "NPC_SMITH",
+    "ingredients": [
+      {
+        "item": "FOX_PELT",
+        "count": 3
+      },
+      {
+        "item": "WOLF_HIDE",
+        "count": 2
+      },
+      {
+        "item": "BOAR_TUSK",
+        "count": 1
+      }
+    ]
+  }
+}

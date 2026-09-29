@@ -1,0 +1,1120 @@
+{
+  "WOLF_FANG": {
+    "name": "Wolf Fang",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 5,
+    "icon": "🦷"
+  },
+  "WOLF_HIDE": {
+    "name": "Wolf Hide",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 8,
+    "icon": "🟫"
+  },
+  "IRON_ORE": {
+    "name": "Iron Ore",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 3,
+    "buy": 15,
+    "icon": "⛏"
+  },
+  "WOODEN_SWORD": {
+    "name": "Wooden Sword",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "mods": {
+      "ATK": 5
+    },
+    "visual": "VIS_WOODEN_SWORD",
+    "sell": 10,
+    "icon": "🗡",
+    "weapon": "sword"
+  },
+  "WOLF_FANG_SWORD": {
+    "name": "Wolf Fang Sword",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "mods": {
+      "ATK": 18,
+      "Crit": 2,
+      "STR": 2
+    },
+    "visual": "VIS_WOLF_FANG_SWORD",
+    "sell": 120,
+    "icon": "⚔",
+    "weapon": "sword"
+  },
+  "STARTER_CHEST": {
+    "name": "Starter Chest",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 3,
+      "maxHP": 10
+    },
+    "visual": "VIS_STARTER_CHEST",
+    "sell": 5,
+    "icon": "🎽"
+  },
+  "STARTER_BOOTS": {
+    "name": "Starter Boots",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Boots",
+    "mods": {
+      "DEF": 1,
+      "AGI": 1
+    },
+    "visual": "VIS_STARTER_BOOTS",
+    "sell": 3,
+    "icon": "🥾"
+  },
+  "HP_POTION": {
+    "name": "HP Potion",
+    "type": "Consumable",
+    "maxStack": 99,
+    "heal": 60,
+    "cooldown": 1,
+    "buy": 20,
+    "sell": 5,
+    "icon": "🧪"
+  },
+  "KNIGHT_HELMET": {
+    "name": "Knight Helmet",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Head",
+    "mods": {
+      "DEF": 4,
+      "VIT": 1
+    },
+    "visual": "VIS_KNIGHT_HELMET",
+    "sell": 40,
+    "buy": 160,
+    "icon": "⛑"
+  },
+  "KNIGHT_CHEST": {
+    "name": "Knight Cuirass",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 8,
+      "maxHP": 30
+    },
+    "visual": "VIS_KNIGHT_CHEST",
+    "sell": 60,
+    "buy": 240,
+    "icon": "🛡"
+  },
+  "KNIGHT_GLOVES": {
+    "name": "Knight Gauntlets",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Gloves",
+    "mods": {
+      "DEF": 2,
+      "ATK": 1,
+      "STR": 1
+    },
+    "visual": "VIS_KNIGHT_GLOVES",
+    "sell": 25,
+    "buy": 100,
+    "icon": "🧤"
+  },
+  "KNIGHT_BOOTS": {
+    "name": "Knight Greaves",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Boots",
+    "mods": {
+      "DEF": 3,
+      "AGI": 2
+    },
+    "visual": "VIS_KNIGHT_BOOTS",
+    "sell": 30,
+    "buy": 120,
+    "icon": "👢"
+  },
+  "KNIGHT_CAPE": {
+    "name": "Paw Cape",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Back",
+    "mods": {
+      "DEF": 1,
+      "Crit": 1,
+      "Dodge": 2
+    },
+    "visual": "VIS_KNIGHT_CAPE",
+    "sell": 35,
+    "buy": 140,
+    "icon": "🧣"
+  },
+  "KITE_SHIELD": {
+    "name": "Kite Shield",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "OffHand",
+    "mods": {
+      "DEF": 6,
+      "maxHP": 20
+    },
+    "visual": "VIS_KITE_SHIELD",
+    "sell": 45,
+    "buy": 180,
+    "icon": "🛡"
+  },
+  "MERCHANT_SEAL": {
+    "name": "Merchant Seal",
+    "type": "Key",
+    "maxStack": 1,
+    "buy": 50,
+    "sell": 0,
+    "icon": "📜",
+    "bound": true
+  },
+  "ALPHA_FANG": {
+    "name": "Alpha Fang",
+    "type": "Material",
+    "maxStack": 20,
+    "sell": 90,
+    "icon": "🦷"
+  },
+  "MOUNT_HORSE": {
+    "name": "Horse Whistle",
+    "type": "Key",
+    "maxStack": 1,
+    "buy": 3000,
+    "sell": 0,
+    "icon": "🐴",
+    "bound": true,
+    "desc": "เรียกม้า — วิ่งเร็ว 1.8 เท่า"
+  },
+  "FOX_PELT": {
+    "name": "Fox Pelt",
+    "type": "Material",
+    "maxStack": 30,
+    "sell": 18,
+    "icon": "🦊"
+  },
+  "BOAR_TUSK": {
+    "name": "Boar Tusk",
+    "type": "Material",
+    "maxStack": 30,
+    "sell": 26,
+    "icon": "🐗"
+  },
+  "SHADOW_FUR": {
+    "name": "Shadow Fur",
+    "type": "Material",
+    "maxStack": 30,
+    "sell": 40,
+    "icon": "🌑"
+  },
+  "FUR_CLOAK": {
+    "name": "Fur Cloak",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Back",
+    "mods": {
+      "DEF": 6,
+      "Crit": 2,
+      "Dodge": 3,
+      "LUK": 1
+    },
+    "visual": "VIS_KNIGHT_CAPE",
+    "sell": 70,
+    "icon": "🧣"
+  },
+  "SHROOM_CAP": {
+    "name": "Shroom Cap",
+    "type": "Material",
+    "maxStack": 40,
+    "sell": 9,
+    "icon": "🍄"
+  },
+  "BEAR_CLAW": {
+    "name": "Bear Claw",
+    "type": "Material",
+    "maxStack": 20,
+    "sell": 55,
+    "icon": "🐾"
+  },
+  "SLIME_JELLY": {
+    "name": "Slime Jelly",
+    "type": "Material",
+    "maxStack": 40,
+    "sell": 6,
+    "icon": "🫧"
+  },
+  "HEART_WOOD": {
+    "name": "Heart Wood",
+    "type": "Material",
+    "maxStack": 20,
+    "sell": 70,
+    "icon": "🪵"
+  },
+  "HUNTER_BOW": {
+    "name": "Hunter Bow",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "bow",
+    "mods": {
+      "ATK": 12,
+      "DEX": 3,
+      "Hit": 4
+    },
+    "visual": "VIS_HUNTER_BOW",
+    "sell": 50,
+    "buy": 200,
+    "icon": "🏹",
+    "desc": "ยิงไกล 7 ม. — ต้องมีลูกธนู"
+  },
+  "ARROW": {
+    "name": "Arrow",
+    "type": "Ammo",
+    "maxStack": 999,
+    "sell": 0,
+    "buy": 1,
+    "icon": "➶",
+    "desc": "ลูกธนู 1 ดอกต่อการยิง 1 ครั้ง"
+  },
+  "APPRENTICE_STAFF": {
+    "name": "Apprentice Staff",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "staff",
+    "mods": {
+      "MATK": 16,
+      "INT": 3,
+      "maxMP": 10
+    },
+    "visual": "VIS_APPRENTICE_STAFF",
+    "sell": 55,
+    "buy": 220,
+    "icon": "🪄",
+    "desc": "ยิงไฟสีฟ้า 6 ม. ระเบิดโดนรอบข้าง — ใช้พลังเวท (INT)"
+  },
+  "MOSS_HEART": {
+    "name": "Moss Heart",
+    "type": "Material",
+    "maxStack": 40,
+    "sell": 30,
+    "icon": "🌿"
+  },
+  "FROST_CRYSTAL": {
+    "name": "Frost Crystal",
+    "type": "Material",
+    "maxStack": 40,
+    "sell": 38,
+    "icon": "❄"
+  },
+  "DUNE_SHELL": {
+    "name": "Dune Shell",
+    "type": "Material",
+    "maxStack": 40,
+    "sell": 42,
+    "icon": "🐚"
+  },
+  "MAGMA_CORE": {
+    "name": "Magma Core",
+    "type": "Material",
+    "maxStack": 40,
+    "sell": 55,
+    "icon": "🔥"
+  },
+  "VOID_SHARD": {
+    "name": "Void Shard",
+    "type": "Material",
+    "maxStack": 40,
+    "sell": 70,
+    "icon": "🔮"
+  },
+  "HI_POTION": {
+    "name": "Hi-Potion",
+    "type": "Consumable",
+    "maxStack": 99,
+    "heal": 150,
+    "cooldown": 1,
+    "buy": 60,
+    "sell": 15,
+    "icon": "🧴"
+  },
+  "ELIXIR": {
+    "name": "Beast Elixir",
+    "type": "Consumable",
+    "maxStack": 20,
+    "heal": 400,
+    "cooldown": 3,
+    "sell": 60,
+    "icon": "⚗",
+    "desc": "ฟื้น HP 400 และ MP 150 — คราฟจากหัวใจมอส + แก่นแมกม่า",
+    "mana": 150
+  },
+  "IRON_SWORD": {
+    "name": "Iron Sword",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "sword",
+    "mods": {
+      "ATK": 12,
+      "STR": 1
+    },
+    "visual": "VIS_IRON_SWORD",
+    "sell": 35,
+    "buy": 150,
+    "icon": "🗡"
+  },
+  "FROST_BLADE": {
+    "name": "Frost Blade",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "sword",
+    "mods": {
+      "ATK": 26,
+      "Crit": 3,
+      "AGI": 2
+    },
+    "visual": "VIS_FROST_BLADE",
+    "sell": 160,
+    "icon": "🗡",
+    "desc": "ดาบผลึกน้ำแข็งจาก Frostford"
+  },
+  "EMBER_SWORD": {
+    "name": "Ember Sword",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "sword",
+    "mods": {
+      "ATK": 32,
+      "STR": 3,
+      "Crit": 2
+    },
+    "visual": "VIS_EMBER_SWORD",
+    "sell": 220,
+    "icon": "⚔",
+    "desc": "ดาบหลอมจากแก่นแมกม่า"
+  },
+  "LONGBOW": {
+    "name": "Longbow",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "bow",
+    "mods": {
+      "ATK": 20,
+      "DEX": 5,
+      "Hit": 6
+    },
+    "visual": "VIS_LONGBOW",
+    "sell": 120,
+    "icon": "🏹"
+  },
+  "ELVEN_BOW": {
+    "name": "Sylvan Bow",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "bow",
+    "mods": {
+      "ATK": 28,
+      "DEX": 7,
+      "Crit": 4
+    },
+    "visual": "VIS_ELVEN_BOW",
+    "sell": 200,
+    "icon": "🏹",
+    "desc": "ธนูไม้มอสแห่ง Mossvale"
+  },
+  "ARCANE_STAFF": {
+    "name": "Arcane Staff",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "staff",
+    "mods": {
+      "MATK": 28,
+      "INT": 5,
+      "maxMP": 20
+    },
+    "visual": "VIS_ARCANE_STAFF",
+    "sell": 150,
+    "icon": "🪄"
+  },
+  "VOID_STAFF": {
+    "name": "Void Staff",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "staff",
+    "mods": {
+      "MATK": 42,
+      "INT": 8,
+      "Crit": 2,
+      "maxMP": 40
+    },
+    "visual": "VIS_VOID_STAFF",
+    "sell": 260,
+    "icon": "🪄",
+    "desc": "คฑาเศษความว่างเปล่าจาก Shadowlands"
+  },
+  "LEATHER_CAP": {
+    "name": "Leather Cap",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Head",
+    "mods": {
+      "DEF": 2,
+      "AGI": 1
+    },
+    "visual": "VIS_LEATHER_CAP",
+    "sell": 15,
+    "buy": 60,
+    "icon": "🧢"
+  },
+  "LEATHER_VEST": {
+    "name": "Leather Vest",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 5,
+      "AGI": 1,
+      "maxHP": 15
+    },
+    "visual": "VIS_LEATHER_VEST",
+    "sell": 28,
+    "buy": 110,
+    "icon": "🦺"
+  },
+  "MAGE_ROBE": {
+    "name": "Mage Robe",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 3,
+      "INT": 4,
+      "MATK": 6,
+      "maxMP": 30
+    },
+    "visual": "VIS_MAGE_ROBE",
+    "sell": 90,
+    "icon": "🥻",
+    "desc": "เสื้อคลุมนักเวท เพิ่มพลังเวท"
+  },
+  "RANGER_BOOTS": {
+    "name": "Ranger Boots",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Boots",
+    "mods": {
+      "DEF": 2,
+      "AGI": 3,
+      "Dodge": 2,
+      "DEX": 1
+    },
+    "visual": "VIS_RANGER_BOOTS",
+    "sell": 70,
+    "icon": "👢"
+  },
+  "FROST_MAIL": {
+    "name": "Frost Mail",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 14,
+      "VIT": 3,
+      "maxHP": 40
+    },
+    "visual": "VIS_FROST_MAIL",
+    "sell": 180,
+    "icon": "🛡"
+  },
+  "EMBER_GAUNTLETS": {
+    "name": "Ember Gauntlets",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Gloves",
+    "mods": {
+      "DEF": 4,
+      "ATK": 4,
+      "STR": 2
+    },
+    "visual": "VIS_EMBER_GAUNTLETS",
+    "sell": 140,
+    "icon": "🧤"
+  },
+  "SHADOW_CLOAK": {
+    "name": "Shadow Cloak",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Back",
+    "mods": {
+      "DEF": 4,
+      "Dodge": 5,
+      "Crit": 3
+    },
+    "visual": "VIS_SHADOW_CLOAK",
+    "sell": 190,
+    "icon": "🧣"
+  },
+  "TOWER_SHIELD": {
+    "name": "Tower Shield",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "OffHand",
+    "mods": {
+      "DEF": 12,
+      "maxHP": 40,
+      "AGI": -1
+    },
+    "visual": "VIS_TOWER_SHIELD",
+    "sell": 150,
+    "icon": "🛡"
+  },
+  "SAND_HOOD": {
+    "name": "Sand Hood",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Head",
+    "mods": {
+      "DEF": 4,
+      "LUK": 3,
+      "Crit": 2
+    },
+    "visual": "VIS_SAND_HOOD",
+    "sell": 110,
+    "icon": "⛑"
+  },
+  "BAT_WING": {
+    "name": "Bat Wing",
+    "type": "Material",
+    "maxStack": 40,
+    "sell": 14,
+    "icon": "🦇"
+  },
+  "MOON_FANG": {
+    "name": "Moon Fang",
+    "type": "Material",
+    "maxStack": 20,
+    "sell": 65,
+    "icon": "🌙",
+    "desc": "เขี้ยวค้างคาวแวมไพร์ — หาได้เฉพาะกลางคืน"
+  },
+  "NIGHT_CLOAK": {
+    "name": "Night Cloak",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Back",
+    "mods": {
+      "DEF": 5,
+      "AGI": 3,
+      "Dodge": 4,
+      "Crit": 2
+    },
+    "visual": "VIS_NIGHT_CLOAK",
+    "sell": 120,
+    "icon": "🦇",
+    "desc": "ผ้าคลุมปีกค้างคาว — วัตถุดิบหาได้แค่กลางคืน"
+  },
+  "MANA_POTION": {
+    "name": "Mana Potion",
+    "type": "Consumable",
+    "maxStack": 99,
+    "mana": 60,
+    "cooldown": 1,
+    "buy": 25,
+    "sell": 6,
+    "icon": "🧪",
+    "desc": "ฟื้น MP 60"
+  },
+  "SKILLBOOK_LIGHTNING": {
+    "name": "Tome: Thunder Strike",
+    "type": "Book",
+    "teaches": "SKILL_LIGHTNING",
+    "maxStack": 5,
+    "sell": 400,
+    "icon": "📘",
+    "rare": true,
+    "desc": "ใช้เพื่อเรียนสกิลสายฟ้า — ดรอปจากบอสเท่านั้น"
+  },
+  "SKILLBOOK_FLAME_BLADE": {
+    "name": "Tome: Flame Blade",
+    "type": "Book",
+    "teaches": "SKILL_FLAME_BLADE",
+    "maxStack": 5,
+    "sell": 400,
+    "icon": "📕",
+    "rare": true,
+    "desc": "ใช้เพื่อเรียนสกิลดาบไฟ — ดรอปจากบอสเท่านั้น"
+  },
+  "ALPHA_FANG_BLADE": {
+    "name": "Alpha Fang Blade",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "sword",
+    "mods": {
+      "ATK": 48,
+      "Crit": 6,
+      "STR": 4,
+      "AGI": 2
+    },
+    "visual": "VIS_ALPHA_BLADE",
+    "sell": 600,
+    "icon": "⚔",
+    "rare": true,
+    "desc": "ดาบจากเขี้ยวราชาหมาป่า"
+  },
+  "INFERNO_STAFF": {
+    "name": "Inferno Staff",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "staff",
+    "mods": {
+      "MATK": 60,
+      "INT": 10,
+      "maxMP": 60,
+      "Crit": 3
+    },
+    "visual": "VIS_INFERNO_STAFF",
+    "sell": 650,
+    "icon": "🪄",
+    "rare": true
+  },
+  "STORM_BOW": {
+    "name": "Storm Bow",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "bow",
+    "mods": {
+      "ATK": 40,
+      "DEX": 10,
+      "Crit": 5,
+      "Hit": 8
+    },
+    "visual": "VIS_STORM_BOW",
+    "sell": 620,
+    "icon": "🏹",
+    "rare": true
+  },
+  "MOONWARD_MAIL": {
+    "name": "Moonward Mail",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 20,
+      "VIT": 5,
+      "maxHP": 80,
+      "Dodge": 3
+    },
+    "visual": "VIS_MOONWARD_MAIL",
+    "sell": 580,
+    "icon": "🛡",
+    "rare": true
+  },
+  "SCROLL_ALPHA_BLADE": {
+    "name": "Blueprint: Alpha Fang Blade",
+    "type": "Scroll",
+    "unlocks": "RCP_ALPHA_FANG_BLADE",
+    "maxStack": 5,
+    "sell": 300,
+    "icon": "📜",
+    "rare": true,
+    "desc": "ใช้เพื่อปลดล็อกสูตรคราฟ Alpha Fang Blade — ดรอปจากบอสเท่านั้น"
+  },
+  "SCROLL_MOONWARD": {
+    "name": "Blueprint: Moonward Mail",
+    "type": "Scroll",
+    "unlocks": "RCP_MOONWARD_MAIL",
+    "maxStack": 5,
+    "sell": 300,
+    "icon": "📜",
+    "rare": true,
+    "desc": "ใช้เพื่อปลดล็อกสูตรคราฟ Moonward Mail — ดรอปจากบอสเท่านั้น"
+  },
+  "SCROLL_INFERNO": {
+    "name": "Blueprint: Inferno Staff",
+    "type": "Scroll",
+    "unlocks": "RCP_INFERNO_STAFF",
+    "maxStack": 5,
+    "sell": 300,
+    "icon": "📜",
+    "rare": true,
+    "desc": "ใช้เพื่อปลดล็อกสูตรคราฟ Inferno Staff — ดรอปจากบอสเท่านั้น"
+  },
+  "SCROLL_STORM_BOW": {
+    "name": "Blueprint: Storm Bow",
+    "type": "Scroll",
+    "unlocks": "RCP_STORM_BOW",
+    "maxStack": 5,
+    "sell": 300,
+    "icon": "📜",
+    "rare": true,
+    "desc": "ใช้เพื่อปลดล็อกสูตรคราฟ Storm Bow — ดรอปจากบอสเท่านั้น"
+  },
+  "STAT_RESET": {
+    "name": "ม้วนรีสเตตัส",
+    "type": "Scroll",
+    "maxStack": 5,
+    "buy": 5000,
+    "sell": 0,
+    "icon": "🔄",
+    "bound": true,
+    "resetStats": true,
+    "desc": "คืนแต้มสเตตัสทั้งหมด (STR AGI VIT INT DEX LUK กลับเป็น 5) ให้แจกใหม่ได้"
+  },
+  "FAIRY_CHARM": {
+    "name": "Faritel's Charm",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Accessory1",
+    "buy": 20000,
+    "sell": 0,
+    "icon": "🧚",
+    "bound": true,
+    "desc": "ทูตเก็บของ นางฟ้าฟาริเทล — สวมไว้แล้วนางฟ้าจะบินตามและเก็บของที่ตกรอบตัว (7 m) ให้อัตโนมัติ"
+  },
+  "MOUNT_DRAGON": {
+    "name": "Dragon Whistle",
+    "type": "Key",
+    "maxStack": 1,
+    "buy": 15000,
+    "sell": 0,
+    "icon": "🐉",
+    "bound": true,
+    "desc": "เรียกมังกร — บินเร็ว 2.4 เท่า"
+  },
+  "MAT_MEADOW": {
+    "name": "Sunseed",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 23,
+    "icon": "💎",
+    "desc": "วัตถุดิบจาก Briar Hedgehog / Copperback Tortoise ใช้คราฟอุปกรณ์ประจำถิ่น"
+  },
+  "GEAR_MEADOW": {
+    "name": "Sunseed Sylvan Bow",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "bow",
+    "mods": {
+      "ATK": 35,
+      "DEX": 9,
+      "Crit": 6
+    },
+    "visual": "VIS_ELVEN_BOW",
+    "sell": 280,
+    "icon": "🏹",
+    "desc": "ธนูไม้มอสแห่ง Mossvale"
+  },
+  "BOOK_MEADOW": {
+    "name": "Tome: Hawkeye Shot",
+    "type": "Book",
+    "teaches": "SKILL_HAWKEYE",
+    "maxStack": 10,
+    "sell": 120,
+    "rare": true,
+    "icon": "📘",
+    "desc": "ใช้เพื่อเรียน Hawkeye Shot"
+  },
+  "MAT_GROVE": {
+    "name": "Bloom Resin",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 25,
+    "icon": "💎",
+    "desc": "วัตถุดิบจาก Bloom Sprite / Elderbark Stag ใช้คราฟอุปกรณ์ประจำถิ่น"
+  },
+  "GEAR_GROVE": {
+    "name": "Bloom Resin Mage Robe",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 5,
+      "INT": 6,
+      "MATK": 8,
+      "maxMP": 37
+    },
+    "visual": "VIS_MAGE_ROBE",
+    "sell": 300,
+    "icon": "🥻",
+    "desc": "เสื้อคลุมนักเวท เพิ่มพลังเวท"
+  },
+  "BOOK_GROVE": {
+    "name": "Tome: Grove Sanctuary",
+    "type": "Book",
+    "teaches": "SKILL_GROVE_MEND",
+    "maxStack": 10,
+    "sell": 120,
+    "rare": true,
+    "icon": "📘",
+    "desc": "ใช้เพื่อเรียน Grove Sanctuary"
+  },
+  "MAT_GLACIER": {
+    "name": "Rime Pearl",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 31,
+    "icon": "💎",
+    "desc": "วัตถุดิบจาก Silverwing Owl / Rimehide Mammoth ใช้คราฟอุปกรณ์ประจำถิ่น"
+  },
+  "GEAR_GLACIER": {
+    "name": "Rime Pearl Frost Mail",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 18,
+      "VIT": 5,
+      "maxHP": 49
+    },
+    "visual": "VIS_FROST_MAIL",
+    "sell": 360,
+    "icon": "🛡"
+  },
+  "BOOK_GLACIER": {
+    "name": "Tome: Glacier Ring",
+    "type": "Book",
+    "teaches": "SKILL_GLACIER_RING",
+    "maxStack": 10,
+    "sell": 120,
+    "rare": true,
+    "icon": "📘",
+    "desc": "ใช้เพื่อเรียน Glacier Ring"
+  },
+  "MAT_DUNE": {
+    "name": "Amber Carapace",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 33,
+    "icon": "💎",
+    "desc": "วัตถุดิบจาก Dune Jackal / Amber Cobra ใช้คราฟอุปกรณ์ประจำถิ่น"
+  },
+  "GEAR_DUNE": {
+    "name": "Amber Carapace Sand Hood",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Head",
+    "mods": {
+      "DEF": 6,
+      "LUK": 5,
+      "Crit": 3
+    },
+    "visual": "VIS_SAND_HOOD",
+    "sell": 380,
+    "icon": "⛑"
+  },
+  "BOOK_DUNE": {
+    "name": "Tome: Dune Quake",
+    "type": "Book",
+    "teaches": "SKILL_DUNE_QUAKE",
+    "maxStack": 10,
+    "sell": 120,
+    "rare": true,
+    "icon": "📘",
+    "desc": "ใช้เพื่อเรียน Dune Quake"
+  },
+  "MAT_CINDER": {
+    "name": "Obsidian Ember",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 37,
+    "icon": "💎",
+    "desc": "วัตถุดิบจาก Cinder Rhino / Obsidian Colossus ใช้คราฟอุปกรณ์ประจำถิ่น"
+  },
+  "GEAR_CINDER": {
+    "name": "Obsidian Ember Ember Sword",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "sword",
+    "mods": {
+      "ATK": 39,
+      "STR": 5,
+      "Crit": 3
+    },
+    "visual": "VIS_EMBER_SWORD",
+    "sell": 420,
+    "icon": "⚔",
+    "desc": "ดาบหลอมจากแก่นแมกม่า"
+  },
+  "BOOK_CINDER": {
+    "name": "Tome: Cinder Cleave",
+    "type": "Book",
+    "teaches": "SKILL_CINDER_CLEAVE",
+    "maxStack": 10,
+    "sell": 120,
+    "rare": true,
+    "icon": "📘",
+    "desc": "ใช้เพื่อเรียน Cinder Cleave"
+  },
+  "MAT_ECLIPSE": {
+    "name": "Eclipse Prism",
+    "type": "Material",
+    "maxStack": 99,
+    "sell": 41,
+    "icon": "💎",
+    "desc": "วัตถุดิบจาก Eclipse Raven / Amethyst Lich ใช้คราฟอุปกรณ์ประจำถิ่น"
+  },
+  "GEAR_ECLIPSE": {
+    "name": "Eclipse Prism Void Staff",
+    "type": "Weapon",
+    "maxStack": 1,
+    "slot": "MainWeapon",
+    "weapon": "staff",
+    "mods": {
+      "MATK": 51,
+      "INT": 11,
+      "Crit": 3,
+      "maxMP": 49
+    },
+    "visual": "VIS_VOID_STAFF",
+    "sell": 460,
+    "icon": "🪄",
+    "desc": "คฑาเศษความว่างเปล่าจาก Shadowlands"
+  },
+  "BOOK_ECLIPSE": {
+    "name": "Tome: Eclipse Storm",
+    "type": "Book",
+    "teaches": "SKILL_ECLIPSE_STORM",
+    "maxStack": 10,
+    "sell": 120,
+    "rare": true,
+    "icon": "📘",
+    "desc": "ใช้เพื่อเรียน Eclipse Storm"
+  },
+  "GREATER_HP_POTION": {
+    "name": "Greater Healing Potion",
+    "type": "Consumable",
+    "maxStack": 99,
+    "sell": 35,
+    "buy": 140,
+    "heal": 650,
+    "cooldown": 6,
+    "icon": "🧪"
+  },
+  "GREATER_MP_POTION": {
+    "name": "Greater Mana Potion",
+    "type": "Consumable",
+    "maxStack": 99,
+    "sell": 35,
+    "buy": 140,
+    "mana": 180,
+    "cooldown": 6,
+    "icon": "🧪"
+  },
+  "REVIVE_SCROLL": {
+    "name": "ใบชุบชีวิต",
+    "type": "Key",
+    "maxStack": 10,
+    "buy": 300,
+    "sell": 60,
+    "icon": "📜",
+    "desc": "ตายแล้วใช้ชุบตัวเองตรงที่ตาย — ฟื้น HP 50% และคืน EXP ที่เสีย"
+  },
+  "GUILD_CAPE": {
+    "name": "ผ้าคลุมกิลด์",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Back",
+    "mods": {
+      "DEF": 8,
+      "maxHP": 60,
+      "Dodge": 3,
+      "Crit": 2
+    },
+    "visual": "VIS_GUILD_CAPE",
+    "sell": 100,
+    "icon": "🧥",
+    "bound": true,
+    "desc": "ผ้าคลุมประจำกิลด์ — แลกด้วยแต้มกิลด์"
+  },
+  "ARCANE_HAT": {
+    "name": "Arcane Wizard Hat",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Head",
+    "mods": {
+      "DEF": 2,
+      "INT": 4,
+      "MATK": 6,
+      "maxMP": 25
+    },
+    "visual": "VIS_ARCANE_HAT",
+    "sell": 90,
+    "buy": 360,
+    "icon": "🎩",
+    "desc": "หมวกพ่อมดชุดอาร์เคน — เพิ่มพลังเวทและ MP"
+  },
+  "ARCANE_ROBE": {
+    "name": "Arcane Robe",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Chest",
+    "mods": {
+      "DEF": 4,
+      "INT": 5,
+      "MATK": 9,
+      "maxMP": 40
+    },
+    "visual": "VIS_ARCANE_ROBE",
+    "sell": 130,
+    "buy": 520,
+    "icon": "🥻",
+    "desc": "เสื้อคลุมเวทชุดอาร์เคน — ชายผ้าปักดาว"
+  },
+  "ARCANE_GLOVES": {
+    "name": "Arcane Silk Gloves",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Gloves",
+    "mods": {
+      "DEF": 1,
+      "INT": 3,
+      "MATK": 5,
+      "Crit": 1
+    },
+    "visual": "VIS_ARCANE_GLOVES",
+    "sell": 70,
+    "buy": 280,
+    "icon": "🧤",
+    "desc": "ถุงมือไหมเวทชุดอาร์เคน"
+  },
+  "ARCANE_BOOTS": {
+    "name": "Arcane Slippers",
+    "type": "Armor",
+    "maxStack": 1,
+    "slot": "Boots",
+    "mods": {
+      "DEF": 2,
+      "INT": 2,
+      "AGI": 2,
+      "maxMP": 15
+    },
+    "visual": "VIS_ARCANE_BOOTS",
+    "sell": 70,
+    "buy": 280,
+    "icon": "🥿",
+    "desc": "รองเท้าผ้านุ่มชุดอาร์เคน"
+  }
+}

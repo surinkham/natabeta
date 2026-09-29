@@ -1,0 +1,205 @@
+{
+  "NPC_SMITH": {
+    "name": "Bram (ช่างตีเหล็ก)",
+    "kind": "craft",
+    "pos": [
+      5.2,
+      -4.2
+    ],
+    "lines": [
+      "เอาเขี้ยว wolf มาสิบอัน เหล็กห้าก้อน ข้าตีดาบให้ — ชุดเกราะอัศวินก็มีขาย",
+      "ล่าหมาป่า จิ้งจอก หมูป่า เอาหนังกับเขี้ยวมา เดี๋ยวตีเสื้อคลุมขนให้"
+    ],
+    "recipes": [
+      "RCP_WOLF_FANG_SWORD",
+      "RCP_FUR_CLOAK",
+      "RCP_HERB_POTION",
+      "RCP_LONGBOW",
+      "RCP_ELVEN_BOW",
+      "RCP_ARCANE_STAFF",
+      "RCP_VOID_STAFF",
+      "RCP_FROST_BLADE",
+      "RCP_EMBER_SWORD",
+      "RCP_MAGE_ROBE",
+      "RCP_RANGER_BOOTS",
+      "RCP_FROST_MAIL",
+      "RCP_EMBER_GAUNTLETS",
+      "RCP_SHADOW_CLOAK",
+      "RCP_TOWER_SHIELD",
+      "RCP_SAND_HOOD",
+      "RCP_ELIXIR",
+      "RCP_NIGHT_CLOAK",
+      "RCP_MANA_POTION",
+      "RCP_GEAR_MEADOW",
+      "RCP_GEAR_GROVE",
+      "RCP_GEAR_GLACIER",
+      "RCP_GEAR_DUNE",
+      "RCP_GEAR_CINDER",
+      "RCP_GEAR_ECLIPSE"
+    ],
+    "stock": [
+      "KNIGHT_HELMET",
+      "KNIGHT_CHEST",
+      "KNIGHT_GLOVES",
+      "KNIGHT_BOOTS",
+      "KNIGHT_CAPE",
+      "KITE_SHIELD",
+      "HUNTER_BOW",
+      "APPRENTICE_STAFF",
+      "IRON_SWORD",
+      "LEATHER_CAP",
+      "LEATHER_VEST",
+      "ARCANE_HAT",
+      "ARCANE_ROBE",
+      "ARCANE_GLOVES",
+      "ARCANE_BOOTS"
+    ]
+  },
+  "NPC_TOOL": {
+    "name": "Mira (ร้านเครื่องมือ)",
+    "kind": "shop",
+    "pos": [
+      -4.6,
+      -2.4
+    ],
+    "lines": [
+      "ยาแดงขวดละ 20 Gold แร่เหล็ก 15 — ขายของให้ก็รับนะ",
+      "อยากแลกของกับผู้เล่นคนอื่น ต้องมี Merchant Seal 50 Gold — ซื้อครั้งเดียวใช้ได้ตลอด",
+      "ลูกธนูดอกละ 1 Gold — ธนูยิงไม่ได้ถ้าไม่มีลูก ซื้อทีละร้อยก็ได้นะ"
+    ],
+    "stock": [
+      "HP_POTION",
+      "IRON_ORE",
+      "MERCHANT_SEAL",
+      "MOUNT_HORSE",
+      "ARROW",
+      "HI_POTION",
+      "MANA_POTION",
+      "MOUNT_DRAGON",
+      "FAIRY_CHARM",
+      "GREATER_HP_POTION",
+      "GREATER_MP_POTION",
+      "REVIVE_SCROLL",
+      "STAT_RESET"
+    ]
+  },
+  "NPC_STYLIST": {
+    "name": "Mei (ช่างแต่งขน)",
+    "kind": "stylist",
+    "pos": [
+      5.0,
+      4.4
+    ],
+    "lines": [
+      "อยากเปลี่ยนสีขนไหม? ครั้งละ 30 Gold"
+    ],
+    "price": 30
+  },
+  "NPC_VILLAGER1": {
+    "name": "ชาวเมือง",
+    "kind": "talk",
+    "pos": [
+      -2.2,
+      2.8
+    ],
+    "lines": [
+      "ระวัง wolf นอกรั้วทางเหนือ ตัวเล็กแต่กัดเจ็บ",
+      "ยืนพักในเมืองเลือดจะฟื้นเอง",
+      "ช่างตีเหล็กอยู่ทางตะวันออกของลาน"
+    ]
+  },
+  "NPC_VILLAGER2": {
+    "name": "แม่ค้าเร่",
+    "kind": "talk",
+    "pos": [
+      -1.4,
+      -5.6
+    ],
+    "lines": [
+      "เขี้ยว wolf ขายได้ราคาดี",
+      "ได้ยินว่ามีมังกรอยู่ไกลออกไปทางเหนือ… เรื่องเล่าน่ะ",
+      "อยากเปลี่ยนสีขนไปหา Mei"
+    ]
+  },
+  "NPC_SKILL": {
+    "name": "Rowan (ครูฝึก)",
+    "kind": "skillshop",
+    "pos": [
+      -4.4,
+      4.6
+    ],
+    "lines": [
+      "ท่าไม้ตายไม่ต้องเลือกสาย — มี Gold ก็เรียนได้ทุกท่า",
+      "Bash ทุบหนัก · Whirlwind ฟันรอบตัว · Mend ฟื้นเลือด"
+    ],
+    "skills": [
+      "SKILL_BASH",
+      "SKILL_WHIRL",
+      "SKILL_HEAL",
+      "SKILL_WAR_CRY",
+      "SKILL_ARROW_RAIN",
+      "SKILL_METEOR",
+      "SKILL_HEAL_CIRCLE",
+      "SKILL_POWER_SHOT",
+      "SKILL_FROST_NOVA",
+      "SKILL_GROUND_SLAM",
+      "SKILL_HAWKEYE",
+      "SKILL_GROVE_MEND",
+      "SKILL_GLACIER_RING",
+      "SKILL_DUNE_QUAKE",
+      "SKILL_CINDER_CLEAVE",
+      "SKILL_ECLIPSE_STORM",
+      "SKILL_REVIVE"
+    ]
+  },
+  "NPC_MARKET": {
+    "name": "Cora (นายหน้าตลาด)",
+    "kind": "market",
+    "species": "cat",
+    "pos": [
+      3.2,
+      7.6
+    ],
+    "lines": [
+      "ลงขายของให้ผู้เล่นคนอื่นได้ที่นี่ — ราคาต้องอยู่ในช่วง ±10% ของราคากลาง",
+      "ของที่ขายได้ เงินจะเข้ากระเป๋าคุณทันที แม้คุณจะออฟไลน์อยู่ก็เก็บไว้ให้"
+    ]
+  },
+  "NPC_GUILD": {
+    "name": "Leon (ผู้ดูแลกิลด์)",
+    "kind": "guild",
+    "species": "dog",
+    "pos": [
+      -3.6,
+      9.0
+    ],
+    "lines": [
+      "ก่อตั้งกิลด์ได้ที่นี่ — 1,000 Gold · สมาชิกกิลด์ไปลานกิลด์ได้จากข้าเลย",
+      "บริจาคเข้าคลังกิลด์เพื่ออัปสิ่งก่อสร้างและสกิลกิลด์ แล้วรับแต้มไปแลกของในร้านกิลด์"
+    ]
+  },
+  "NPC_GUILD_HALL": {
+    "name": "Mira (แม่บ้านกิลด์)",
+    "kind": "guild",
+    "species": "cat",
+    "pos": [
+      -540,
+      273
+    ],
+    "lines": [
+      "ยินดีต้อนรับสู่ลานกิลด์ — หอ ลานฝึก และตลาดของพวกเราเติบโตจากเงินบริจาคของทุกคน",
+      "กลับเมืองเมื่อไหร่ บอกข้าได้เลย"
+    ]
+  },
+  "NPC_QUEST_BOARD": {
+    "name": "กระดานเควสกิลด์",
+    "kind": "quest",
+    "pos": [
+      -532,
+      273
+    ],
+    "lines": [
+      "งานล่าวันนี้ — รับได้วันละ 5 เควส ล่าครบแล้วกลับมาส่งที่กระดานนี้เพื่อรับทอง"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "VIS_WOODEN_SWORD": {
+    "slot": "MainWeapon",
+    "mesh": "SM_WoodenSword",
+    "socket": "socket_hand_r"
+  },
+  "VIS_WOLF_FANG_SWORD": {
+    "slot": "MainWeapon",
+    "mesh": "SM_KnightSword",
+    "socket": "socket_hand_r"
+  },
+  "VIS_STARTER_CHEST": {
+    "slot": "Chest",
+    "mesh": "SK_Knight_Chest",
+    "tint": "#3b6f78"
+  },
+  "VIS_STARTER_BOOTS": {
+    "slot": "Boots",
+    "mesh": "SK_Knight_Boots",
+    "tint": "#7a5a3a"
+  },
+  "VIS_KNIGHT_HELMET": {
+    "slot": "Head",
+    "mesh": "SK_Knight_Helmet"
+  },
+  "VIS_KNIGHT_CHEST": {
+    "slot": "Chest",
+    "mesh": "SK_Knight_Chest"
+  },
+  "VIS_KNIGHT_GLOVES": {
+    "slot": "Gloves",
+    "mesh": "SK_Knight_Gloves"
+  },
+  "VIS_KNIGHT_BOOTS": {
+    "slot": "Boots",
+    "mesh": "SK_Knight_Boots"
+  },
+  "VIS_KNIGHT_CAPE": {
+    "slot": "Back",
+    "mesh": "SK_Knight_Cape"
+  },
+  "VIS_KITE_SHIELD": {
+    "slot": "OffHand",
+    "mesh": "SM_KiteShield",
+    "socket": "socket_hand_l"
+  }
+}
